@@ -1,0 +1,19 @@
+# Include C source files
+recursive-include c_src *.c *.h
+
+# Include build script
+include build_cffi.py
+
+# Include benchmark and demo scripts
+include benchmark.py
+include demo.py
+
+# Include documentation
+include README.md
+
+# Exclude unnecessary files
+global-exclude *.pyc
+global-exclude __pycache__
+global-exclude *.so
+global-exclude *.dylib
+global-exclude *.dll
