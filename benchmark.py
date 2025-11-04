@@ -45,20 +45,27 @@ def benchmark_variant(cipher, variant_name, message_sizes, iterations=1000):
 
         # Warm-up
         for _ in range(10):
-            ciphertext = cipher.encrypt(key, nonce, message)
+            buffer = bytearray(message)
+            tag = cipher.encrypt_inplace(key, nonce, buffer)
 
         # Encryption benchmark
         start = time.perf_counter()
         for _ in range(iterations):
-            ciphertext = cipher.encrypt(key, nonce, message)
+            buffer = bytearray(message)
+            tag = cipher.encrypt_inplace(key, nonce, buffer)
         elapsed = time.perf_counter() - start
 
         enc_throughput = format_throughput(size * iterations, elapsed)
 
+        # Prepare for decryption benchmark
+        ciphertext_buffer = bytearray(message)
+        tag = cipher.encrypt_inplace(key, nonce, ciphertext_buffer)
+
         # Decryption benchmark
         start = time.perf_counter()
         for _ in range(iterations):
-            plaintext = cipher.decrypt(key, nonce, ciphertext)
+            buffer = bytearray(ciphertext_buffer)
+            cipher.decrypt_inplace(key, nonce, buffer, tag)
         elapsed = time.perf_counter() - start
 
         dec_throughput = format_throughput(size * iterations, elapsed)
@@ -249,20 +256,27 @@ def run_all_benchmarks():
 
             # Warm-up
             for _ in range(min(10, iters)):
-                ciphertext = cipher.encrypt(key, nonce, message)
+                buffer = bytearray(message)
+                tag = cipher.encrypt_inplace(key, nonce, buffer)
 
             # Encryption benchmark
             start = time.perf_counter()
             for _ in range(iters):
-                ciphertext = cipher.encrypt(key, nonce, message)
+                buffer = bytearray(message)
+                tag = cipher.encrypt_inplace(key, nonce, buffer)
             elapsed = time.perf_counter() - start
 
             enc_throughput = format_throughput(size * iters, elapsed)
 
+            # Prepare for decryption benchmark
+            ciphertext_buffer = bytearray(message)
+            tag = cipher.encrypt_inplace(key, nonce, ciphertext_buffer)
+
             # Decryption benchmark
             start = time.perf_counter()
             for _ in range(iters):
-                plaintext = cipher.decrypt(key, nonce, ciphertext)
+                buffer = bytearray(ciphertext_buffer)
+                cipher.decrypt_inplace(key, nonce, buffer, tag)
             elapsed = time.perf_counter() - start
 
             dec_throughput = format_throughput(size * iters, elapsed)
