@@ -45,7 +45,7 @@ def benchmark_variant(cipher, variant_name, message_sizes, iterations=1000):
 
         # Warm-up
         for _ in range(10):
-            cipher.encrypt(key, nonce, message)
+            ciphertext = cipher.encrypt(key, nonce, message)
 
         # Encryption benchmark
         start = time.perf_counter()
@@ -58,7 +58,7 @@ def benchmark_variant(cipher, variant_name, message_sizes, iterations=1000):
         # Decryption benchmark
         start = time.perf_counter()
         for _ in range(iterations):
-            _ = cipher.decrypt(key, nonce, ciphertext)
+            plaintext = cipher.decrypt(key, nonce, ciphertext)
         elapsed = time.perf_counter() - start
 
         dec_throughput = format_throughput(size * iterations, elapsed)
@@ -73,7 +73,7 @@ def benchmark_variant(cipher, variant_name, message_sizes, iterations=1000):
 
             start = time.perf_counter()
             for _ in range(iterations):
-                _ = cipher.decrypt_detached(key, nonce, ct, tag)
+                plaintext = cipher.decrypt_detached(key, nonce, ct, tag)
             elapsed = time.perf_counter() - start
             dec_detached_throughput = format_throughput(size * iterations, elapsed)
         except AttributeError:
@@ -130,7 +130,7 @@ def benchmark_mac(mac_class, variant_name, message_sizes, iterations_list):
         for _ in range(min(10, iters)):
             mac = mac_class(key, nonce)
             mac.update(message)
-            _ = mac.final()
+            tag = mac.final()
 
         start = time.perf_counter()
         for _ in range(iters):
@@ -159,7 +159,7 @@ def benchmark_mac(mac_class, variant_name, message_sizes, iterations_list):
             mac = mac_class(key, nonce)
             for chunk in chunks:
                 mac.update(chunk)
-            _ = mac.final()
+            tag = mac.final()
         elapsed = time.perf_counter() - start
         streaming_throughput = format_throughput(size * iters, elapsed)
 
@@ -249,7 +249,7 @@ def run_all_benchmarks():
 
             # Warm-up
             for _ in range(min(10, iters)):
-                cipher.encrypt(key, nonce, message)
+                ciphertext = cipher.encrypt(key, nonce, message)
 
             # Encryption benchmark
             start = time.perf_counter()
@@ -262,7 +262,7 @@ def run_all_benchmarks():
             # Decryption benchmark
             start = time.perf_counter()
             for _ in range(iters):
-                _ = cipher.decrypt(key, nonce, ciphertext)
+                plaintext = cipher.decrypt(key, nonce, ciphertext)
             elapsed = time.perf_counter() - start
 
             dec_throughput = format_throughput(size * iters, elapsed)
@@ -277,7 +277,7 @@ def run_all_benchmarks():
 
                 start = time.perf_counter()
                 for _ in range(iters):
-                    _ = cipher.decrypt_detached(key, nonce, ct, tag)
+                    plaintext = cipher.decrypt_detached(key, nonce, ct, tag)
                 elapsed = time.perf_counter() - start
                 dec_detached_throughput = format_throughput(size * iters, elapsed)
             else:
