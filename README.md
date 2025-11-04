@@ -145,6 +145,29 @@ By default, a 32-byte (256-bit) tag is used for maximum security. You can also u
 cipher = AEGIS128L(tag_size=16)
 ```
 
+### In-Place Encryption/Decryption
+
+For performance-critical applications, especially when working with large buffers (>10MB), in-place operations can provide 30-50% performance improvement by reducing memory bandwidth:
+
+```python
+from pyaegis import AEGIS128X4
+
+cipher = AEGIS128X4()
+key = cipher.random_key()
+nonce = cipher.random_nonce()
+
+# Encrypt in-place
+buffer = bytearray(b"secret message")
+tag = cipher.encrypt_inplace(key, nonce, buffer)
+# buffer now contains ciphertext
+
+# Decrypt in-place
+cipher.decrypt_inplace(key, nonce, buffer, tag)
+# buffer now contains plaintext again
+```
+
+In-place operations work with `bytearray` or `memoryview` objects and overwrite the input buffer directly. If decryption fails, the buffer is zeroed for security.
+
 ### Stream Generation
 
 Generate a deterministic pseudo-random byte sequence (AEGIS-128L and AEGIS-256 only):
