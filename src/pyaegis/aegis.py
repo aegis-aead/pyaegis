@@ -105,8 +105,10 @@ class _AEGISBase:
         # Multi-lane variants use detached mode internally
         if self._encrypt_func is None:
             assert self._encrypt_detached_func is not None
-            ciphertext_buf = ffi.new(f"uint8_t[{len(plaintext)}]")
-            tag_buf = ffi.new(f"uint8_t[{self.tag_size}]")
+            output_len = len(plaintext) + self.tag_size
+            output_buf = ffi.new(f"uint8_t[{output_len}]")
+            ciphertext_buf = output_buf
+            tag_buf = ffi.cast("uint8_t*", output_buf) + len(plaintext)
 
             result = self._encrypt_detached_func(
                 ciphertext_buf,
@@ -123,9 +125,7 @@ class _AEGISBase:
             if result != 0:
                 raise AEGISError("Encryption failed")
 
-            return bytes(ffi.buffer(ciphertext_buf, len(plaintext))) + bytes(
-                ffi.buffer(tag_buf, self.tag_size)
-            )
+            return bytes(ffi.buffer(output_buf, output_len))
 
         # Standard variants use combined mode
         output_buf = ffi.new(f"uint8_t[{len(plaintext) + self.tag_size}]")
@@ -184,15 +184,15 @@ class _AEGISBase:
         # Multi-lane variants use detached mode internally
         if self._decrypt_func is None:
             assert self._decrypt_detached_func is not None
-            ct = ciphertext[:plaintext_len]
-            tag = ciphertext[plaintext_len:]
+            ct_ptr = ffi.cast("const uint8_t*", ffi.from_buffer(ciphertext))
+            tag_ptr = ct_ptr + plaintext_len
 
             result = self._decrypt_detached_func(
                 plaintext_buf,
-                ct,
-                len(ct),
-                tag,
-                len(tag),
+                ct_ptr,
+                plaintext_len,
+                tag_ptr,
+                self.tag_size,
                 associated_data,
                 len(associated_data),
                 nonce,
