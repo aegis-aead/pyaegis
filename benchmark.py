@@ -5,18 +5,18 @@ import sys
 import time
 
 from pyaegis import (
-    AEGIS128L,
-    AEGIS128L_MAC,
-    AEGIS128X2,
-    AEGIS128X2_MAC,
-    AEGIS128X4,
-    AEGIS128X4_MAC,
-    AEGIS256,
-    AEGIS256_MAC,
-    AEGIS256X2,
-    AEGIS256X2_MAC,
-    AEGIS256X4,
-    AEGIS256X4_MAC,
+    Aegis128L,
+    Aegis128X2,
+    Aegis128X4,
+    Aegis256,
+    Aegis256X2,
+    Aegis256X4,
+    AegisMac128L,
+    AegisMac128X2,
+    AegisMac128X4,
+    AegisMac256,
+    AegisMac256X2,
+    AegisMac256X4,
 )
 
 
@@ -80,7 +80,7 @@ def benchmark_variant(cipher, variant_name, message_sizes, iterations=1000):
 
             start = time.perf_counter()
             for _ in range(iterations):
-                plaintext = cipher.decrypt_detached(key, nonce, ct, tag)
+                plaintext = cipher.decrypt_detached(key, nonce, ct, tag)  # noqa: F841
             elapsed = time.perf_counter() - start
             dec_detached_throughput = format_throughput(size * iterations, elapsed)
         except AttributeError:
@@ -203,37 +203,37 @@ def run_all_benchmarks():
 
     variants = [
         (
-            AEGIS128L(),
+            Aegis128L(),
             "AEGIS-128L",
             small_sizes + medium_sizes + large_sizes,
             [1000, 1000, 1000, 500, 100, 50, 20, 10, 10],
         ),
         (
-            AEGIS256(),
+            Aegis256(),
             "AEGIS-256",
             small_sizes + medium_sizes + large_sizes,
             [1000, 1000, 1000, 500, 100, 50, 20, 10, 10],
         ),
         (
-            AEGIS128X2(),
+            Aegis128X2(),
             "AEGIS-128X2",
             small_sizes + medium_sizes + large_sizes,
             [1000, 1000, 1000, 500, 100, 50, 20, 10, 10],
         ),
         (
-            AEGIS128X4(),
+            Aegis128X4(),
             "AEGIS-128X4",
             small_sizes + medium_sizes + large_sizes,
             [1000, 1000, 1000, 500, 100, 50, 20, 10, 10],
         ),
         (
-            AEGIS256X2(),
+            Aegis256X2(),
             "AEGIS-256X2",
             small_sizes + medium_sizes + large_sizes,
             [1000, 1000, 1000, 500, 100, 50, 20, 10, 10],
         ),
         (
-            AEGIS256X4(),
+            Aegis256X4(),
             "AEGIS-256X4",
             small_sizes + medium_sizes + large_sizes,
             [1000, 1000, 1000, 500, 100, 50, 20, 10, 10],
@@ -291,7 +291,7 @@ def run_all_benchmarks():
 
                 start = time.perf_counter()
                 for _ in range(iters):
-                    plaintext = cipher.decrypt_detached(key, nonce, ct, tag)
+                    plaintext = cipher.decrypt_detached(key, nonce, ct, tag)  # noqa: F841
                 elapsed = time.perf_counter() - start
                 dec_detached_throughput = format_throughput(size * iters, elapsed)
             else:
@@ -325,12 +325,12 @@ def run_all_benchmarks():
     print("\n\n" + "MAC Benchmarks\n\n")
 
     mac_variants = [
-        (AEGIS128L_MAC, "AEGIS-128L MAC"),
-        (AEGIS256_MAC, "AEGIS-256 MAC"),
-        (AEGIS128X2_MAC, "AEGIS-128X2 MAC"),
-        (AEGIS128X4_MAC, "AEGIS-128X4 MAC"),
-        (AEGIS256X2_MAC, "AEGIS-256X2 MAC"),
-        (AEGIS256X4_MAC, "AEGIS-256X4 MAC"),
+        (AegisMac128L, "AEGIS-128L MAC"),
+        (AegisMac256, "AEGIS-256 MAC"),
+        (AegisMac128X2, "AEGIS-128X2 MAC"),
+        (AegisMac128X4, "AEGIS-128X4 MAC"),
+        (AegisMac256X2, "AEGIS-256X2 MAC"),
+        (AegisMac256X4, "AEGIS-256X4 MAC"),
     ]
 
     for mac_class, name in mac_variants:

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Demo script showcasing pyaegis functionality."""
 
-from pyaegis import AEGIS128L, AEGIS128L_MAC, AEGIS256, AEGIS256_MAC, DecryptionError
+from pyaegis import Aegis128L, Aegis256, AegisMac128L, AegisMac256, DecryptionError
 
 
 def demo_basic_encryption():
@@ -10,7 +10,7 @@ def demo_basic_encryption():
     print("Demo 1: Basic Encryption/Decryption with AEGIS-128L")
     print("=" * 60)
 
-    cipher = AEGIS128L()
+    cipher = Aegis128L()
     key = cipher.random_key()
     nonce = cipher.random_nonce()
 
@@ -34,7 +34,7 @@ def demo_aad():
     print("Demo 2: Encryption with Additional Authenticated Data")
     print("=" * 60)
 
-    cipher = AEGIS128L()
+    cipher = Aegis128L()
     key = cipher.random_key()
     nonce = cipher.random_nonce()
 
@@ -67,7 +67,7 @@ def demo_detached_tag():
     print("Demo 3: Detached Tag Mode")
     print("=" * 60)
 
-    cipher = AEGIS128L()
+    cipher = Aegis128L()
     key = cipher.random_key()
     nonce = cipher.random_nonce()
 
@@ -92,16 +92,16 @@ def demo_tag_sizes():
     print("=" * 60)
 
     plaintext = b"Test message"
-    key = AEGIS128L.random_key()
-    nonce = AEGIS128L.random_nonce()
+    key = Aegis128L.random_key()
+    nonce = Aegis128L.random_nonce()
 
     # 32-byte tag (default, recommended)
-    cipher32 = AEGIS128L(tag_size=32)
+    cipher32 = Aegis128L(tag_size=32)
     ct32 = cipher32.encrypt(key, nonce, plaintext)
     print(f"With 32-byte tag: {len(ct32)} bytes total ({len(plaintext)} + 32)")
 
     # 16-byte tag
-    cipher16 = AEGIS128L(tag_size=16)
+    cipher16 = Aegis128L(tag_size=16)
     ct16 = cipher16.encrypt(key, nonce, plaintext)
     print(f"With 16-byte tag: {len(ct16)} bytes total ({len(plaintext)} + 16)")
     print()
@@ -113,7 +113,7 @@ def demo_aegis256():
     print("Demo 5: AEGIS-256 (256-bit security)")
     print("=" * 60)
 
-    cipher = AEGIS256()
+    cipher = Aegis256()
     key = cipher.random_key()
     nonce = cipher.random_nonce()
 
@@ -136,12 +136,12 @@ def demo_stream():
     print("Demo 6: Pseudo-Random Stream Generation")
     print("=" * 60)
 
-    key = AEGIS128L.random_key()
-    nonce = AEGIS128L.random_nonce()
+    key = Aegis128L.random_key()
+    nonce = Aegis128L.random_nonce()
 
     # Generate deterministic stream
-    stream1 = AEGIS128L.stream(key, nonce, 32)
-    stream2 = AEGIS128L.stream(key, nonce, 32)
+    stream1 = Aegis128L.stream(key, nonce, 32)
+    stream2 = Aegis128L.stream(key, nonce, 32)
 
     print(f"Stream 1: {stream1.hex()}")
     print(f"Stream 2: {stream2.hex()}")
@@ -155,7 +155,7 @@ def demo_tampering_detection():
     print("Demo 7: Tampering Detection")
     print("=" * 60)
 
-    cipher = AEGIS128L()
+    cipher = Aegis128L()
     key = cipher.random_key()
     nonce = cipher.random_nonce()
 
@@ -183,28 +183,28 @@ def demo_mac_basic():
     print("Demo 8: MAC - Message Authentication Code")
     print("=" * 60)
 
-    key = AEGIS128L_MAC.random_key()
-    nonce = AEGIS128L_MAC.random_nonce()
+    key = AegisMac128L.random_key()
+    nonce = AegisMac128L.random_nonce()
 
     # Generate MAC
-    mac = AEGIS128L_MAC(key, nonce)
+    mac = AegisMac128L(key, nonce)
     mac.update(b"This is ")
     mac.update(b"an authenticated ")
     mac.update(b"message")
     tag = mac.final()
 
-    print(f"Message: This is an authenticated message")
+    print("Message: This is an authenticated message")
     print(f"MAC tag ({len(tag)} bytes): {tag.hex()}")
 
     # Verify MAC with correct data
-    mac_verify = AEGIS128L_MAC(key, nonce)
+    mac_verify = AegisMac128L(key, nonce)
     mac_verify.update(b"This is an authenticated message")
     mac_verify.verify(tag)
     print("✓ MAC verification successful")
 
     # Try to verify with wrong data
     try:
-        mac_wrong = AEGIS128L_MAC(key, nonce)
+        mac_wrong = AegisMac128L(key, nonce)
         mac_wrong.update(b"This is a tampered message")
         mac_wrong.verify(tag)
         print("ERROR: Should have failed with wrong data!")
@@ -228,12 +228,12 @@ def demo_mac_use_cases():
     print()
 
     # Example: Authenticating a file
-    key = AEGIS256_MAC.random_key()
-    nonce = AEGIS256_MAC.random_nonce()
+    key = AegisMac256.random_key()
+    nonce = AegisMac256.random_nonce()
 
     file_data = b"Important file contents that must not be tampered with."
 
-    mac = AEGIS256_MAC(key, nonce)
+    mac = AegisMac256(key, nonce)
     mac.update(file_data)
     tag = mac.final()
 
@@ -242,7 +242,7 @@ def demo_mac_use_cases():
     print()
 
     # Later, verify the file hasn't been tampered with
-    mac_check = AEGIS256_MAC(key, nonce)
+    mac_check = AegisMac256(key, nonce)
     mac_check.update(file_data)
     mac_check.verify(tag)
     print("✓ File integrity verified")

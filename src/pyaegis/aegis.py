@@ -7,13 +7,13 @@ import os
 from pyaegis._aegis_ffi import ffi, lib
 
 
-class AEGISError(Exception):
+class AegisError(Exception):
     """Base exception for AEGIS operations."""
 
     pass
 
 
-class DecryptionError(AEGISError):
+class DecryptionError(AegisError):
     """Raised when decryption or authentication fails."""
 
     pass
@@ -96,7 +96,7 @@ class _AEGISBase:
 
         Raises:
             ValueError: If key or nonce has incorrect length, or if into has wrong size
-            AEGISError: If encryption fails
+            AegisError: If encryption fails
         """
         self._check_key(key)
         self._check_nonce(nonce)
@@ -139,7 +139,7 @@ class _AEGISBase:
             )
 
             if result != 0:
-                raise AEGISError("Encryption failed")
+                raise AegisError("Encryption failed")
 
             return bytes(into)
 
@@ -156,7 +156,7 @@ class _AEGISBase:
         )
 
         if result != 0:
-            raise AEGISError("Encryption failed")
+            raise AegisError("Encryption failed")
 
         return bytes(into)
 
@@ -272,7 +272,7 @@ class _AEGISWithDetached(_AEGISBase):
 
         Raises:
             ValueError: If key or nonce has incorrect length, or if ciphertext_into has wrong size
-            AEGISError: If encryption fails
+            AegisError: If encryption fails
         """
         self._check_key(key)
         self._check_nonce(nonce)
@@ -312,7 +312,7 @@ class _AEGISWithDetached(_AEGISBase):
         )
 
         if result != 0:
-            raise AEGISError("Encryption failed")
+            raise AegisError("Encryption failed")
 
         return (bytes(ciphertext_into), bytes(tag_into))
 
@@ -406,10 +406,10 @@ class _AEGISWithDetached(_AEGISBase):
         Raises:
             TypeError: If buffer is not mutable (bytearray/memoryview)
             ValueError: If key or nonce has incorrect length
-            AEGISError: If encryption fails
+            AegisError: If encryption fails
 
         Example:
-            >>> cipher = AEGIS128X4()
+            >>> cipher = Aegis128X4()
             >>> key, nonce = cipher.random_key(), cipher.random_nonce()
             >>> buffer = bytearray(b"secret message")
             >>> tag = cipher.encrypt_inplace(key, nonce, buffer)
@@ -457,7 +457,7 @@ class _AEGISWithDetached(_AEGISBase):
         )
 
         if result != 0:
-            raise AEGISError("Encryption failed")
+            raise AegisError("Encryption failed")
 
         return bytes(tag_into)
 
@@ -489,7 +489,7 @@ class _AEGISWithDetached(_AEGISBase):
             DecryptionError: If authentication fails
 
         Example:
-            >>> cipher = AEGIS128X4()
+            >>> cipher = Aegis128X4()
             >>> # Received ciphertext and tag
             >>> buffer = bytearray(ciphertext)
             >>> cipher.decrypt_inplace(key, nonce, buffer, tag)
@@ -576,7 +576,7 @@ class _AEGISWithStream(_AEGISWithDetached):
         return bytes(into)
 
 
-class AEGIS128L(_AEGISWithStream):
+class Aegis128L(_AEGISWithStream):
     """
     AEGIS-128L authenticated encryption.
 
@@ -584,7 +584,7 @@ class AEGIS128L(_AEGISWithStream):
     Provides high performance on modern CPUs with AES-NI support.
 
     Example:
-        >>> cipher = AEGIS128L()
+        >>> cipher = Aegis128L()
         >>> key = cipher.random_key()
         >>> nonce = cipher.random_nonce()
         >>> ciphertext = cipher.encrypt(key, nonce, b"secret message")
@@ -601,7 +601,7 @@ class AEGIS128L(_AEGISWithStream):
     _stream_func = lib.aegis128l_stream
 
 
-class AEGIS256(_AEGISWithStream):
+class Aegis256(_AEGISWithStream):
     """
     AEGIS-256 authenticated encryption.
 
@@ -609,7 +609,7 @@ class AEGIS256(_AEGISWithStream):
     Provides higher security margin than AEGIS-128L.
 
     Example:
-        >>> cipher = AEGIS256()
+        >>> cipher = Aegis256()
         >>> key = cipher.random_key()
         >>> nonce = cipher.random_nonce()
         >>> ciphertext = cipher.encrypt(key, nonce, b"secret message")
@@ -626,7 +626,7 @@ class AEGIS256(_AEGISWithStream):
     _stream_func = lib.aegis256_stream
 
 
-class AEGIS128X2(_AEGISWithDetached):
+class Aegis128X2(_AEGISWithDetached):
     """
     AEGIS-128X2 - dual-lane variant for higher performance.
 
@@ -634,7 +634,7 @@ class AEGIS128X2(_AEGISWithDetached):
     Provides higher throughput on CPUs with wide SIMD capabilities.
 
     Example:
-        >>> cipher = AEGIS128X2()
+        >>> cipher = Aegis128X2()
         >>> key = cipher.random_key()
         >>> nonce = cipher.random_nonce()
         >>> ciphertext = cipher.encrypt(key, nonce, b"secret message")
@@ -648,7 +648,7 @@ class AEGIS128X2(_AEGISWithDetached):
     _decrypt_detached_func = lib.aegis128x2_decrypt_detached
 
 
-class AEGIS128X4(_AEGISWithDetached):
+class Aegis128X4(_AEGISWithDetached):
     """
     AEGIS-128X4 - quad-lane variant for highest performance on AVX-512.
 
@@ -656,7 +656,7 @@ class AEGIS128X4(_AEGISWithDetached):
     Provides maximum throughput on CPUs with AVX-512 support.
 
     Example:
-        >>> cipher = AEGIS128X4()
+        >>> cipher = Aegis128X4()
         >>> key = cipher.random_key()
         >>> nonce = cipher.random_nonce()
         >>> ciphertext = cipher.encrypt(key, nonce, b"secret message")
@@ -670,7 +670,7 @@ class AEGIS128X4(_AEGISWithDetached):
     _decrypt_detached_func = lib.aegis128x4_decrypt_detached
 
 
-class AEGIS256X2(_AEGISWithDetached):
+class Aegis256X2(_AEGISWithDetached):
     """
     AEGIS-256X2 - dual-lane variant with 256-bit security.
 
@@ -678,7 +678,7 @@ class AEGIS256X2(_AEGISWithDetached):
     Provides higher throughput with increased security margin.
 
     Example:
-        >>> cipher = AEGIS256X2()
+        >>> cipher = Aegis256X2()
         >>> key = cipher.random_key()
         >>> nonce = cipher.random_nonce()
         >>> ciphertext = cipher.encrypt(key, nonce, b"secret message")
@@ -692,7 +692,7 @@ class AEGIS256X2(_AEGISWithDetached):
     _decrypt_detached_func = lib.aegis256x2_decrypt_detached
 
 
-class AEGIS256X4(_AEGISWithDetached):
+class Aegis256X4(_AEGISWithDetached):
     """
     AEGIS-256X4 - quad-lane variant with 256-bit security.
 
@@ -700,7 +700,7 @@ class AEGIS256X4(_AEGISWithDetached):
     Provides maximum throughput with increased security margin on AVX-512 CPUs.
 
     Example:
-        >>> cipher = AEGIS256X4()
+        >>> cipher = Aegis256X4()
         >>> key = cipher.random_key()
         >>> nonce = cipher.random_nonce()
         >>> ciphertext = cipher.encrypt(key, nonce, b"secret message")
@@ -780,14 +780,14 @@ class _AEGISMACBase:
             data: Input data to authenticate
 
         Raises:
-            AEGISError: If update fails or MAC has been finalized
+            AegisError: If update fails or MAC has been finalized
         """
         if self._finalized:
-            raise AEGISError("Cannot update after finalization")
+            raise AegisError("Cannot update after finalization")
 
         result = self._mac_update_func(self._state, data, len(data))
         if result != 0:
-            raise AEGISError("MAC update failed")
+            raise AegisError("MAC update failed")
 
     def final(self) -> bytes:
         """
@@ -797,15 +797,15 @@ class _AEGISMACBase:
             Authentication tag
 
         Raises:
-            AEGISError: If MAC has already been finalized
+            AegisError: If MAC has already been finalized
         """
         if self._finalized:
-            raise AEGISError("MAC already finalized")
+            raise AegisError("MAC already finalized")
 
         tag_buf = ffi.new(f"uint8_t[{self.tag_size}]")
         result = self._mac_final_func(self._state, tag_buf, self.tag_size)
         if result != 0:
-            raise AEGISError("MAC finalization failed")
+            raise AegisError("MAC finalization failed")
 
         self._finalized = True
         return bytes(ffi.buffer(tag_buf, self.tag_size))
@@ -819,10 +819,10 @@ class _AEGISMACBase:
 
         Raises:
             DecryptionError: If the tag is not authentic
-            AEGISError: If MAC has already been finalized
+            AegisError: If MAC has already been finalized
         """
         if self._finalized:
-            raise AEGISError("MAC already finalized")
+            raise AegisError("MAC already finalized")
 
         result = self._mac_verify_func(self._state, tag, len(tag))
         self._finalized = True
@@ -836,20 +836,20 @@ class _AEGISMACBase:
         self._finalized = False
 
 
-class AEGIS128L_MAC(_AEGISMACBase):
+class AegisMac128L(_AEGISMACBase):
     """
     AEGIS-128L MAC - message authentication using AEGIS-128L.
 
     Uses a 16-byte key and 16-byte nonce.
 
     Example:
-        >>> mac = AEGIS128L_MAC(key, nonce)
+        >>> mac = AegisMac128L(key, nonce)
         >>> mac.update(b"hello")
         >>> mac.update(b" world")
         >>> tag = mac.final()
 
     Example (verification):
-        >>> mac2 = AEGIS128L_MAC(key, nonce)
+        >>> mac2 = AegisMac128L(key, nonce)
         >>> mac2.update(b"hello world")
         >>> mac2.verify(tag)  # raises DecryptionError if invalid
     """
@@ -865,14 +865,14 @@ class AEGIS128L_MAC(_AEGISMACBase):
     _mac_reset_func = lib.aegis128l_mac_reset
 
 
-class AEGIS256_MAC(_AEGISMACBase):
+class AegisMac256(_AEGISMACBase):
     """
     AEGIS-256 MAC - message authentication using AEGIS-256.
 
     Uses a 32-byte key and 32-byte nonce.
 
     Example:
-        >>> mac = AEGIS256_MAC(key, nonce)
+        >>> mac = AegisMac256(key, nonce)
         >>> mac.update(b"hello")
         >>> mac.update(b" world")
         >>> tag = mac.final()
@@ -889,7 +889,7 @@ class AEGIS256_MAC(_AEGISMACBase):
     _mac_reset_func = lib.aegis256_mac_reset
 
 
-class AEGIS128X2_MAC(_AEGISMACBase):
+class AegisMac128X2(_AEGISMACBase):
     """
     AEGIS-128X2 MAC - message authentication using dual-lane AEGIS-128.
 
@@ -897,7 +897,7 @@ class AEGIS128X2_MAC(_AEGISMACBase):
     Provides higher throughput on CPUs with wide SIMD capabilities.
 
     Example:
-        >>> mac = AEGIS128X2_MAC(key, nonce)
+        >>> mac = AegisMac128X2(key, nonce)
         >>> mac.update(b"data")
         >>> tag = mac.final()
     """
@@ -913,7 +913,7 @@ class AEGIS128X2_MAC(_AEGISMACBase):
     _mac_reset_func = lib.aegis128x2_mac_reset
 
 
-class AEGIS128X4_MAC(_AEGISMACBase):
+class AegisMac128X4(_AEGISMACBase):
     """
     AEGIS-128X4 MAC - message authentication using quad-lane AEGIS-128.
 
@@ -921,7 +921,7 @@ class AEGIS128X4_MAC(_AEGISMACBase):
     Provides maximum throughput on CPUs with AVX-512 support.
 
     Example:
-        >>> mac = AEGIS128X4_MAC(key, nonce)
+        >>> mac = AegisMac128X4(key, nonce)
         >>> mac.update(b"data")
         >>> tag = mac.final()
     """
@@ -937,7 +937,7 @@ class AEGIS128X4_MAC(_AEGISMACBase):
     _mac_reset_func = lib.aegis128x4_mac_reset
 
 
-class AEGIS256X2_MAC(_AEGISMACBase):
+class AegisMac256X2(_AEGISMACBase):
     """
     AEGIS-256X2 MAC - message authentication using dual-lane AEGIS-256.
 
@@ -945,7 +945,7 @@ class AEGIS256X2_MAC(_AEGISMACBase):
     Provides higher throughput with increased security margin.
 
     Example:
-        >>> mac = AEGIS256X2_MAC(key, nonce)
+        >>> mac = AegisMac256X2(key, nonce)
         >>> mac.update(b"data")
         >>> tag = mac.final()
     """
@@ -961,7 +961,7 @@ class AEGIS256X2_MAC(_AEGISMACBase):
     _mac_reset_func = lib.aegis256x2_mac_reset
 
 
-class AEGIS256X4_MAC(_AEGISMACBase):
+class AegisMac256X4(_AEGISMACBase):
     """
     AEGIS-256X4 MAC - message authentication using quad-lane AEGIS-256.
 
@@ -969,7 +969,7 @@ class AEGIS256X4_MAC(_AEGISMACBase):
     Provides maximum throughput with increased security margin on AVX-512 CPUs.
 
     Example:
-        >>> mac = AEGIS256X4_MAC(key, nonce)
+        >>> mac = AegisMac256X4(key, nonce)
         >>> mac.update(b"data")
         >>> tag = mac.final()
     """

@@ -26,9 +26,9 @@ AEGIS is a high-performance authenticated cipher that provides both confidential
 
 All AEAD variants have corresponding MAC variants for authentication without encryption:
 
-- AEGIS128L_MAC, AEGIS256_MAC
-- AEGIS128X2_MAC, AEGIS128X4_MAC
-- AEGIS256X2_MAC, AEGIS256X4_MAC
+- AegisMac128L, AegisMac256
+- AegisMac128X2, AegisMac128X4
+- AegisMac256X2, AegisMac256X4
 
 ## Installation
 
@@ -87,10 +87,10 @@ This creates both source and wheel distributions in the `dist/` directory. The C
 ### Basic Encryption/Decryption
 
 ```python
-from pyaegis import AEGIS128L
+from pyaegis import Aegis128L
 
 # Create a cipher instance
-cipher = AEGIS128L()
+cipher = Aegis128L()
 
 # Generate random key and nonce
 key = cipher.random_key()
@@ -108,9 +108,9 @@ assert decrypted == plaintext
 ### With Additional Authenticated Data (AAD)
 
 ```python
-from pyaegis import AEGIS256
+from pyaegis import Aegis256
 
-cipher = AEGIS256()
+cipher = Aegis256()
 key = cipher.random_key()
 nonce = cipher.random_nonce()
 
@@ -124,9 +124,9 @@ plaintext = cipher.decrypt(key, nonce, ciphertext, associated_data=associated_da
 ### Detached Tag Mode
 
 ```python
-from pyaegis import AEGIS128L
+from pyaegis import Aegis128L
 
-cipher = AEGIS128L()
+cipher = Aegis128L()
 key = cipher.random_key()
 nonce = cipher.random_nonce()
 
@@ -142,9 +142,9 @@ plaintext = cipher.decrypt_detached(key, nonce, ciphertext, tag)
 For performance-sensitive applications, you can provide pre-allocated buffers to avoid memory allocation:
 
 ```python
-from pyaegis import AEGIS128L
+from pyaegis import Aegis128L
 
-cipher = AEGIS128L()
+cipher = Aegis128L()
 key = cipher.random_key()
 nonce = cipher.random_nonce()
 plaintext = b"secret message"
@@ -167,7 +167,7 @@ ciphertext, tag = cipher.encrypt_detached(key, nonce, plaintext, ciphertext_into
 By default, a 32-byte (256-bit) tag is used for maximum security. You can also use a 16-byte (128-bit) tag:
 
 ```python
-cipher = AEGIS128L(tag_size=16)
+cipher = Aegis128L(tag_size=16)
 ```
 
 ### In-Place Encryption/Decryption
@@ -175,9 +175,9 @@ cipher = AEGIS128L(tag_size=16)
 For performance-critical applications, especially when working with large buffers (>10MB), in-place operations can provide 30-50% performance improvement by reducing memory bandwidth:
 
 ```python
-from pyaegis import AEGIS128X4
+from pyaegis import Aegis128X4
 
-cipher = AEGIS128X4()
+cipher = Aegis128X4()
 key = cipher.random_key()
 nonce = cipher.random_nonce()
 
@@ -198,17 +198,17 @@ In-place operations work with `bytearray` or `memoryview` objects and overwrite 
 Generate a deterministic pseudo-random byte sequence (AEGIS-128L and AEGIS-256 only):
 
 ```python
-from pyaegis import AEGIS128L
+from pyaegis import Aegis128L
 
-key = AEGIS128L.random_key()
-nonce = AEGIS128L.random_nonce()
+key = Aegis128L.random_key()
+nonce = Aegis128L.random_nonce()
 
 # Generate 1024 pseudo-random bytes
-random_bytes = AEGIS128L.stream(key, nonce, 1024)
+random_bytes = Aegis128L.stream(key, nonce, 1024)
 
 # With pre-allocated buffer for better performance
 buffer = bytearray(1024)
-random_bytes = AEGIS128L.stream(key, nonce, 1024, into=buffer)
+random_bytes = Aegis128L.stream(key, nonce, 1024, into=buffer)
 ```
 
 ### Message Authentication Code (MAC)
@@ -216,19 +216,19 @@ random_bytes = AEGIS128L.stream(key, nonce, 1024, into=buffer)
 Generate and verify authentication tags without encryption:
 
 ```python
-from pyaegis import AEGIS128L_MAC, DecryptionError
+from pyaegis import AegisMac128L, DecryptionError
 
-key = AEGIS128L_MAC.random_key()
-nonce = AEGIS128L_MAC.random_nonce()
+key = AegisMac128L.random_key()
+nonce = AegisMac128L.random_nonce()
 
 # Generate MAC tag
-mac = AEGIS128L_MAC(key, nonce)
+mac = AegisMac128L(key, nonce)
 mac.update(b"message part 1")
 mac.update(b"message part 2")
 tag = mac.final()
 
 # Verify MAC tag
-mac_verify = AEGIS128L_MAC(key, nonce)
+mac_verify = AegisMac128L(key, nonce)
 mac_verify.update(b"message part 1message part 2")
 try:
     mac_verify.verify(tag)
@@ -242,9 +242,9 @@ Important: The same key must NOT be used for both MAC and encryption operations.
 ## Error Handling
 
 ```python
-from pyaegis import AEGIS128L, DecryptionError
+from pyaegis import Aegis128L, DecryptionError
 
-cipher = AEGIS128L()
+cipher = Aegis128L()
 key = cipher.random_key()
 nonce = cipher.random_nonce()
 
