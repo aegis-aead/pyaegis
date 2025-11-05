@@ -52,10 +52,10 @@ test = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/aegis-aead/pyaegis"
-Repository = "https://github.com/aegis-aead/pyaegis"
-Issues = "https://github.com/aegis-aead/pyaegis/issues"
-Changelog = "https://github.com/aegis-aead/pyaegis/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/jedisct1/pyaegis"
+Repository = "https://github.com/jedisct1/pyaegis"
+Issues = "https://github.com/jedisct1/pyaegis/issues"
+Changelog = "https://github.com/jedisct1/pyaegis/blob/main/CHANGELOG.md"
 
 [build-system]
 requires = ["setuptools>=80.9.0", "wheel>=0.45.1", "cffi>=2.0.0"]

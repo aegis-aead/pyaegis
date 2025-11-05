@@ -1,7 +1,7 @@
 # pyaegis
 
 [![PyPI version](https://badge.fury.io/py/pyaegis.svg)](https://badge.fury.io/py/pyaegis)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/aegis-aead/pyaegis/blob/main/LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/jedisct1/pyaegis/blob/main/LICENSE)
 
 Python bindings for libaegis - high-performance AEGIS authenticated encryption.
 
@@ -52,7 +52,7 @@ The package compiles the C library automatically using any installed C compiler:
 
 ```bash
 # Clone the repository
-git clone https://github.com/aegis-aead/pyaegis.git
+git clone https://github.com/jedisct1/pyaegis.git
 cd pyaegis
 
 # Install with uv (compiles C sources automatically)
