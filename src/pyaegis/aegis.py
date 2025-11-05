@@ -285,7 +285,9 @@ class _AEGISWithDetached(_AEGISBase):
         # Use pre-allocated buffer for ciphertext if provided
         if ciphertext_into is not None:
             if len(ciphertext_into) != plaintext_len:
-                raise ValueError(f"Ciphertext buffer must be {plaintext_len} bytes, got {len(ciphertext_into)}")
+                raise ValueError(
+                    f"Ciphertext buffer must be {plaintext_len} bytes, got {len(ciphertext_into)}"
+                )
             ciphertext_buf = ffi.from_buffer(ciphertext_into)
         else:
             ciphertext_into = bytearray(plaintext_len)
@@ -424,9 +426,7 @@ class _AEGISWithDetached(_AEGISBase):
 
         # Validate buffer type
         if not isinstance(buffer, (bytearray, memoryview)):
-            raise TypeError(
-                f"buffer must be bytearray or memoryview, got {type(buffer).__name__}"
-            )
+            raise TypeError(f"buffer must be bytearray or memoryview, got {type(buffer).__name__}")
 
         plaintext_len = len(buffer)
 
@@ -506,9 +506,7 @@ class _AEGISWithDetached(_AEGISBase):
 
         # Validate buffer type
         if not isinstance(buffer, (bytearray, memoryview)):
-            raise TypeError(
-                f"buffer must be bytearray or memoryview, got {type(buffer).__name__}"
-            )
+            raise TypeError(f"buffer must be bytearray or memoryview, got {type(buffer).__name__}")
 
         ciphertext_len = len(buffer)
 
