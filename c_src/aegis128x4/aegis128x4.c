@@ -6,9 +6,9 @@
 #include "aegis128x4.h"
 #include "aegis128x4_aesni.h"
 #include "aegis128x4_altivec.h"
-#include "aegis128x4_neon_aes.h"
 #include "aegis128x4_avx2.h"
 #include "aegis128x4_avx512.h"
+#include "aegis128x4_neon_aes.h"
 
 #ifndef HAS_HW_AES
 #    include "aegis128x4_soft.h"

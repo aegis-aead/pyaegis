@@ -21,8 +21,9 @@ extern "C" {
 #define aegis256_ABYTES_MAX 32
 
 /*
- * When using AEGIS in incremental mode, this is the maximum number
- * of leftover ciphertext bytes that can be returned at finalization.
+ * Maximum number of leftover bytes at finalization (always 0).
+ * This constant is kept for backwards compatibility but is no longer needed
+ * since update functions now output data immediately without buffering.
  */
 #define aegis256_TAILBYTES_MAX 15
 
@@ -49,8 +50,9 @@ size_t aegis256_abytes_min(void);
 size_t aegis256_abytes_max(void);
 
 /*
- * When using AEGIS in incremental mode, this is the maximum number
- * of leftover ciphertext bytes that can be returned at finalization.
+ * Maximum number of leftover bytes at finalization (always 0).
+ * This function is kept for backwards compatibility but always returns 15.
+ * Update functions now output data immediately without buffering.
  */
 size_t aegis256_tailbytes_max(void);
 
@@ -139,10 +141,13 @@ void aegis256_state_init(aegis256_state *st_, const uint8_t *ad, size_t adlen, c
  * Encrypt a message chunk.
  * The same function can be used regardless of whether the tag will be attached or not.
  *
+ * This function outputs ciphertext immediately without buffering. The output length
+ * will match the input length (i.e., *written will equal mlen on success).
+ *
  * st_: state to update
  * c: ciphertext output buffer
  * clen_max: length of the ciphertext chunk buffer (must be >= mlen)
- * written: number of ciphertext bytes actually written
+ * written: number of ciphertext bytes actually written (will be equal to mlen on success)
  * m: plaintext input buffer
  * mlen: length of the plaintext
  *
@@ -154,10 +159,14 @@ int aegis256_state_encrypt_update(aegis256_state *st_, uint8_t *c, size_t clen_m
 /*
  * Finalize the incremental encryption and generate the authentication tag.
  *
+ * Since update functions now output data immediately, this function does not
+ * produce any additional ciphertext bytes (*written will always be 0).
+ * It only generates the authentication tag.
+ *
  * st_: state to finalize
- * c: output buffer for the final ciphertext chunk
- * clen_max: length of the ciphertext chunk buffer (must be >= remaining bytes)
- * written: number of ciphertext bytes actually written
+ * c: output buffer (unused, can be NULL)
+ * clen_max: length of the output buffer (unused, can be 0)
+ * written: number of ciphertext bytes written (will always be 0, can be NULL)
  * mac: authentication tag output buffer
  * maclen: length of the authentication tag to generate (16 or 32)
  *
@@ -168,12 +177,16 @@ int aegis256_state_encrypt_detached_final(aegis256_state *st_, uint8_t *c, size_
 
 /*
  * Finalize the incremental encryption and attach the authentication tag
- * to the final ciphertext chunk.
+ * to the output.
+ *
+ * Since update functions now output data immediately, this function does not
+ * produce any additional ciphertext bytes. It only outputs the authentication tag.
+ * The value of *written will always equal maclen on success.
  *
  * st_: state to finalize
- * c: output buffer for the final ciphertext chunk
- * clen_max: length of the ciphertext chunk buffer (must be >= remaining bytes+maclen)
- * written: number of ciphertext bytes actually written
+ * c: output buffer for the authentication tag
+ * clen_max: length of the output buffer (must be >= maclen)
+ * written: number of bytes written (will be equal to maclen on success, can be NULL)
  * maclen: length of the authentication tag to generate (16 or 32)
  *
  * Return 0 on success, -1 on failure.
@@ -184,12 +197,15 @@ int aegis256_state_encrypt_final(aegis256_state *st_, uint8_t *c, size_t clen_ma
 /*
  * Decrypt a message chunk.
  *
+ * This function outputs plaintext immediately without buffering. The output length
+ * will match the input length (i.e., *written will equal clen on success).
+ *
  * The output should never be released to the caller until the tag has been verified.
  *
  * st_: state to update
  * m: plaintext output buffer
  * mlen_max: length of the plaintext chunk buffer (must be >= clen)
- * written: number of plaintext bytes actually written
+ * written: number of plaintext bytes actually written (will be equal to clen on success)
  * c: ciphertext chunk input buffer
  * clen: length of the ciphertext chunk
  *
@@ -200,16 +216,20 @@ int aegis256_state_decrypt_detached_update(aegis256_state *st_, uint8_t *m, size
     __attribute__((warn_unused_result));
 
 /*
- * Decrypt the final message chunk and verify the authentication tag.
+ * Finalize the incremental decryption and verify the authentication tag.
+ *
+ * Since update functions now output data immediately, this function does not
+ * produce any additional plaintext bytes (*written will always be 0).
+ * It only verifies the authentication tag.
  *
  * st_: state to finalize
- * m: plaintext output buffer
- * mlen_max: length of the plaintext chunk buffer (must be >= remaining bytes)
- * written: number of plaintext bytes actually written
+ * m: plaintext output buffer (unused, can be NULL)
+ * mlen_max: length of the plaintext buffer (unused, can be 0)
+ * written: number of plaintext bytes written (will always be 0, can be NULL)
  * mac: authentication tag input buffer
  * maclen: length of the authentication tag (16 or 32)
  *
- * Return 0 on success, -1 on failure.
+ * Return 0 if the tag is valid, -1 otherwise.
  */
 int aegis256_state_decrypt_detached_final(aegis256_state *st_, uint8_t *m, size_t mlen_max,
                                           size_t *written, const uint8_t *mac, size_t maclen)
@@ -286,7 +306,7 @@ void aegis256_mac_init(aegis256_mac_state *st_, const uint8_t *k, const uint8_t 
  *
  * This function can be called multiple times.
  *
- * Once the full input has been absorb, call either `_mac_final` or `_mac_verify`.
+ * Once the full input has been absorbed, call either `_mac_final` or `_mac_verify`.
  */
 int aegis256_mac_update(aegis256_mac_state *st_, const uint8_t *m, size_t mlen);
 

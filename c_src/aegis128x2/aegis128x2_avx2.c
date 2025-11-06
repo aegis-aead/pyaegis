@@ -10,7 +10,8 @@
 #    ifdef HAVE_VAESINTRIN_H
 
 #        ifdef __clang__
-#            pragma clang attribute push(__attribute__((target("aes,vaes,avx2"))), apply_to = function)
+#            pragma clang attribute push(__attribute__((target("aes,vaes,avx2"))), \
+                                         apply_to = function)
 #        elif defined(__GNUC__)
 #            pragma GCC target("aes,vaes,avx2")
 #        endif

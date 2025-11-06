@@ -141,6 +141,26 @@ aegis256x4_absorb(const uint8_t *const src, aes_block_t *const state)
     aegis256x4_update(state, msg);
 }
 
+static inline void
+aegis256x4_absorb_rate(const uint8_t *const src, aes_block_t *const state)
+{
+    aes_block_t msg;
+
+    msg = AES_BLOCK_LOAD(src);
+    aegis256x4_update(state, msg);
+}
+
+static inline void
+aegis256x4_squeeze_keystream(uint8_t *const dst, aes_block_t *const state)
+{
+    aes_block_t tmp;
+
+    tmp = AES_BLOCK_XOR(state[5], state[4]);
+    tmp = AES_BLOCK_XOR(tmp, state[1]);
+    tmp = AES_BLOCK_XOR(tmp, AES_BLOCK_AND(state[2], state[3]));
+    AES_BLOCK_STORE(dst, tmp);
+}
+
 static void
 aegis256x4_enc(uint8_t *const dst, const uint8_t *const src, aes_block_t *const state)
 {
@@ -477,42 +497,54 @@ state_encrypt_update(aegis256x4_state *st_, uint8_t *c, size_t clen_max, size_t 
 
     *written = 0;
     st->mlen += mlen;
-    if (st->pos != 0) {
-        const size_t available = (sizeof st->buf) - st->pos;
-        const size_t n         = mlen < available ? mlen : available;
 
-        if (n != 0) {
-            memcpy(st->buf + st->pos, m + i, n);
-            m += n;
-            mlen -= n;
-            st->pos += n;
-        }
-        if (st->pos == sizeof st->buf) {
-            if (clen_max < RATE) {
-                errno = ERANGE;
-                return -1;
-            }
-            clen_max -= RATE;
-            aegis256x4_enc(c, st->buf, blocks);
-            *written += RATE;
-            c += RATE;
-            st->pos = 0;
-        } else {
-            return 0;
-        }
-    }
-    if (clen_max < (mlen & ~(size_t) (RATE - 1))) {
+    if (clen_max < mlen) {
         errno = ERANGE;
         return -1;
     }
+    if (st->pos != 0) {
+        const size_t available = RATE - st->pos;
+        const size_t n         = mlen < available ? mlen : available;
+        size_t       j;
+        uint8_t      tmp;
+
+        for (j = 0; j < n; j++) {
+            tmp                  = m[j];
+            c[j]                 = m[j] ^ st->buf[st->pos + j];
+            st->buf[st->pos + j] = tmp;
+        }
+        st->pos += n;
+        *written += n;
+        m += n;
+        c += n;
+        mlen -= n;
+
+        if (st->pos < RATE) {
+            memcpy(st->blocks, blocks, sizeof blocks);
+            return 0;
+        }
+        aegis256x4_absorb_rate(st->buf, blocks);
+        st->pos = 0;
+    }
+
     for (i = 0; i + RATE <= mlen; i += RATE) {
         aegis256x4_enc(c + i, m + i, blocks);
     }
     *written += i;
-    left = mlen % RATE;
+
+    left = mlen - i;
     if (left != 0) {
-        memcpy(st->buf, m + i, left);
+        size_t  j;
+        uint8_t tmp;
+
+        aegis256x4_squeeze_keystream(st->buf, blocks);
+        for (j = 0; j < left; j++) {
+            tmp        = m[i + j];
+            c[i + j]   = m[i + j] ^ st->buf[j];
+            st->buf[j] = tmp;
+        }
         st->pos = left;
+        *written += left;
     }
 
     memcpy(st->blocks, blocks, sizeof blocks);
@@ -528,25 +560,23 @@ state_encrypt_detached_final(aegis256x4_state *st_, uint8_t *c, size_t clen_max,
     _aegis256x4_state *const st =
         (_aegis256x4_state *) ((((uintptr_t) &st_->opaque) + (ALIGNMENT - 1)) &
                                ~(uintptr_t) (ALIGNMENT - 1));
-    CRYPTO_ALIGN(ALIGNMENT) uint8_t src[RATE];
-    CRYPTO_ALIGN(ALIGNMENT) uint8_t dst[RATE];
 
+    (void) c;
+    (void) clen_max;
     memcpy(blocks, st->blocks, sizeof blocks);
 
-    *written = 0;
-    if (clen_max < st->pos) {
-        errno = ERANGE;
-        return -1;
+    if (written != NULL) {
+        *written = 0;
     }
-    if (st->pos != 0) {
-        memset(src, 0, sizeof src);
-        memcpy(src, st->buf, st->pos);
-        aegis256x4_enc(dst, src, blocks);
-        memcpy(c, dst, st->pos);
-    }
-    aegis256x4_mac(mac, maclen, st->adlen, st->mlen, blocks);
 
-    *written = st->pos;
+    if (st->pos != 0) {
+        CRYPTO_ALIGN(ALIGNMENT) uint8_t tmp[RATE];
+        memset(tmp, 0, sizeof tmp);
+        memcpy(tmp, st->buf, st->pos);
+        aegis256x4_absorb_rate(tmp, blocks);
+    }
+
+    aegis256x4_mac(mac, maclen, st->adlen, st->mlen, blocks);
 
     memcpy(st->blocks, blocks, sizeof blocks);
 
@@ -561,25 +591,29 @@ state_encrypt_final(aegis256x4_state *st_, uint8_t *c, size_t clen_max, size_t *
     _aegis256x4_state *const st =
         (_aegis256x4_state *) ((((uintptr_t) &st_->opaque) + (ALIGNMENT - 1)) &
                                ~(uintptr_t) (ALIGNMENT - 1));
-    CRYPTO_ALIGN(ALIGNMENT) uint8_t src[RATE];
-    CRYPTO_ALIGN(ALIGNMENT) uint8_t dst[RATE];
 
     memcpy(blocks, st->blocks, sizeof blocks);
 
-    *written = 0;
-    if (clen_max < st->pos + maclen) {
+    if (written != NULL) {
+        *written = 0;
+    }
+    if (clen_max < maclen) {
         errno = ERANGE;
         return -1;
     }
-    if (st->pos != 0) {
-        memset(src, 0, sizeof src);
-        memcpy(src, st->buf, st->pos);
-        aegis256x4_enc(dst, src, blocks);
-        memcpy(c, dst, st->pos);
-    }
-    aegis256x4_mac(c + st->pos, maclen, st->adlen, st->mlen, blocks);
 
-    *written = st->pos + maclen;
+    if (st->pos != 0) {
+        CRYPTO_ALIGN(ALIGNMENT) uint8_t tmp[RATE];
+        memset(tmp, 0, sizeof tmp);
+        memcpy(tmp, st->buf, st->pos);
+        aegis256x4_absorb_rate(tmp, blocks);
+    }
+
+    aegis256x4_mac(c, maclen, st->adlen, st->mlen, blocks);
+
+    if (written != NULL) {
+        *written = maclen;
+    }
 
     memcpy(st->blocks, blocks, sizeof blocks);
 
@@ -632,7 +666,7 @@ state_decrypt_detached_update(aegis256x4_state *st_, uint8_t *m, size_t mlen_max
     }
 
     if (m != NULL) {
-        if (mlen_max < (clen % RATE)) {
+        if (mlen_max < (clen & ~(size_t) (RATE - 1))) {
             errno = ERANGE;
             return -1;
         }
@@ -670,7 +704,9 @@ state_decrypt_detached_final(aegis256x4_state *st_, uint8_t *m, size_t mlen_max,
 
     memcpy(blocks, st->blocks, sizeof blocks);
 
-    *written = 0;
+    if (written != NULL) {
+        *written = 0;
+    }
     if (st->pos != 0) {
         if (m != NULL) {
             if (mlen_max < st->pos) {

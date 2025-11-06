@@ -6,8 +6,8 @@
 #include "aegis256x2.h"
 #include "aegis256x2_aesni.h"
 #include "aegis256x2_altivec.h"
-#include "aegis256x2_neon_aes.h"
 #include "aegis256x2_avx2.h"
+#include "aegis256x2_neon_aes.h"
 
 #ifndef HAS_HW_AES
 #    include "aegis256x2_soft.h"
