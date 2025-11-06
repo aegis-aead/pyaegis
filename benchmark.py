@@ -157,8 +157,8 @@ def benchmark_mac(mac_class, variant_name, message_sizes, iterations_list):
         verify_throughput = format_throughput(size * iters, elapsed)
 
         # Benchmark: streaming (multiple updates)
-        # Process in 1KB chunks
-        chunk_size = 1024
+        # Process in 64KB chunks
+        chunk_size = 64 * 1024
         chunks = [message[i : i + chunk_size] for i in range(0, len(message), chunk_size)]
 
         start = time.perf_counter()
@@ -349,7 +349,7 @@ def run_all_benchmarks():
     print("\nMAC Benchmarks:")
     print("  - Update+Final: Single update() call followed by final()")
     print("  - Verify: Single update() call followed by verify()")
-    print("  - Streaming: Multiple 1KB update() calls followed by final()")
+    print("  - Streaming: Multiple 64KB update() calls followed by final()")
 
 
 if __name__ == "__main__":
