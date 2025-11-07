@@ -583,191 +583,347 @@ static void (*_cffi_call_python_org)(struct _cffi_externpy_s *, char *);
 /************************************************************/
 
 static void *_cffi_types[] = {
-/*  0 */ _CFFI_OP(_CFFI_OP_FUNCTION, 170), // int()(aegis128l_mac_state *, uint8_t *, size_t)
-/*  1 */ _CFFI_OP(_CFFI_OP_POINTER, 164), // aegis128l_mac_state *
-/*  2 */ _CFFI_OP(_CFFI_OP_POINTER, 171), // uint8_t *
+/*  0 */ _CFFI_OP(_CFFI_OP_FUNCTION, 314), // int()(aegis128l_mac_state *, uint8_t *, size_t)
+/*  1 */ _CFFI_OP(_CFFI_OP_POINTER, 302), // aegis128l_mac_state *
+/*  2 */ _CFFI_OP(_CFFI_OP_POINTER, 315), // uint8_t *
 /*  3 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28), // size_t
 /*  4 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/*  5 */ _CFFI_OP(_CFFI_OP_FUNCTION, 170), // int()(aegis128l_mac_state *, uint8_t const *, size_t)
+/*  5 */ _CFFI_OP(_CFFI_OP_FUNCTION, 314), // int()(aegis128l_mac_state *, uint8_t const *, size_t)
 /*  6 */ _CFFI_OP(_CFFI_OP_NOOP, 1),
-/*  7 */ _CFFI_OP(_CFFI_OP_POINTER, 171), // uint8_t const *
+/*  7 */ _CFFI_OP(_CFFI_OP_POINTER, 315), // uint8_t const *
 /*  8 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
 /*  9 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 10 */ _CFFI_OP(_CFFI_OP_FUNCTION, 170), // int()(aegis128x2_mac_state *, uint8_t *, size_t)
-/* 11 */ _CFFI_OP(_CFFI_OP_POINTER, 165), // aegis128x2_mac_state *
+/* 10 */ _CFFI_OP(_CFFI_OP_FUNCTION, 314), // int()(aegis128l_state *, uint8_t *, size_t, size_t *, uint8_t *, size_t)
+/* 11 */ _CFFI_OP(_CFFI_OP_POINTER, 303), // aegis128l_state *
 /* 12 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
 /* 13 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
-/* 14 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 15 */ _CFFI_OP(_CFFI_OP_FUNCTION, 170), // int()(aegis128x2_mac_state *, uint8_t const *, size_t)
-/* 16 */ _CFFI_OP(_CFFI_OP_NOOP, 11),
-/* 17 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 18 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
-/* 19 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 20 */ _CFFI_OP(_CFFI_OP_FUNCTION, 170), // int()(aegis128x4_mac_state *, uint8_t *, size_t)
-/* 21 */ _CFFI_OP(_CFFI_OP_POINTER, 166), // aegis128x4_mac_state *
-/* 22 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
-/* 23 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
-/* 24 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 25 */ _CFFI_OP(_CFFI_OP_FUNCTION, 170), // int()(aegis128x4_mac_state *, uint8_t const *, size_t)
-/* 26 */ _CFFI_OP(_CFFI_OP_NOOP, 21),
-/* 27 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 28 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
-/* 29 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 30 */ _CFFI_OP(_CFFI_OP_FUNCTION, 170), // int()(aegis256_mac_state *, uint8_t *, size_t)
-/* 31 */ _CFFI_OP(_CFFI_OP_POINTER, 167), // aegis256_mac_state *
-/* 32 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
-/* 33 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
-/* 34 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 35 */ _CFFI_OP(_CFFI_OP_FUNCTION, 170), // int()(aegis256_mac_state *, uint8_t const *, size_t)
-/* 36 */ _CFFI_OP(_CFFI_OP_NOOP, 31),
-/* 37 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 38 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
-/* 39 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 40 */ _CFFI_OP(_CFFI_OP_FUNCTION, 170), // int()(aegis256x2_mac_state *, uint8_t *, size_t)
-/* 41 */ _CFFI_OP(_CFFI_OP_POINTER, 168), // aegis256x2_mac_state *
-/* 42 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
-/* 43 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
-/* 44 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 45 */ _CFFI_OP(_CFFI_OP_FUNCTION, 170), // int()(aegis256x2_mac_state *, uint8_t const *, size_t)
-/* 46 */ _CFFI_OP(_CFFI_OP_NOOP, 41),
-/* 47 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 48 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
-/* 49 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 50 */ _CFFI_OP(_CFFI_OP_FUNCTION, 170), // int()(aegis256x4_mac_state *, uint8_t *, size_t)
-/* 51 */ _CFFI_OP(_CFFI_OP_POINTER, 169), // aegis256x4_mac_state *
-/* 52 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
-/* 53 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
-/* 54 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 55 */ _CFFI_OP(_CFFI_OP_FUNCTION, 170), // int()(aegis256x4_mac_state *, uint8_t const *, size_t)
-/* 56 */ _CFFI_OP(_CFFI_OP_NOOP, 51),
-/* 57 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 58 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
-/* 59 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 60 */ _CFFI_OP(_CFFI_OP_FUNCTION, 170), // int()(uint8_t *, size_t, uint8_t const *, size_t, uint8_t const *, size_t, uint8_t const *, uint8_t const *)
-/* 61 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
-/* 62 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
-/* 63 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 64 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
-/* 65 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 66 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
-/* 67 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 68 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 14 */ _CFFI_OP(_CFFI_OP_POINTER, 3), // size_t *
+/* 15 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
+/* 16 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 17 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 18 */ _CFFI_OP(_CFFI_OP_FUNCTION, 314), // int()(aegis128l_state *, uint8_t *, size_t, size_t *, uint8_t const *, size_t)
+/* 19 */ _CFFI_OP(_CFFI_OP_NOOP, 11),
+/* 20 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
+/* 21 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 22 */ _CFFI_OP(_CFFI_OP_NOOP, 14),
+/* 23 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 24 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 25 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 26 */ _CFFI_OP(_CFFI_OP_FUNCTION, 314), // int()(aegis128x2_mac_state *, uint8_t *, size_t)
+/* 27 */ _CFFI_OP(_CFFI_OP_POINTER, 304), // aegis128x2_mac_state *
+/* 28 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
+/* 29 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 30 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 31 */ _CFFI_OP(_CFFI_OP_FUNCTION, 314), // int()(aegis128x2_mac_state *, uint8_t const *, size_t)
+/* 32 */ _CFFI_OP(_CFFI_OP_NOOP, 27),
+/* 33 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 34 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 35 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 36 */ _CFFI_OP(_CFFI_OP_FUNCTION, 314), // int()(aegis128x2_state *, uint8_t *, size_t, size_t *, uint8_t *, size_t)
+/* 37 */ _CFFI_OP(_CFFI_OP_POINTER, 305), // aegis128x2_state *
+/* 38 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
+/* 39 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 40 */ _CFFI_OP(_CFFI_OP_NOOP, 14),
+/* 41 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
+/* 42 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 43 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 44 */ _CFFI_OP(_CFFI_OP_FUNCTION, 314), // int()(aegis128x2_state *, uint8_t *, size_t, size_t *, uint8_t const *, size_t)
+/* 45 */ _CFFI_OP(_CFFI_OP_NOOP, 37),
+/* 46 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
+/* 47 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 48 */ _CFFI_OP(_CFFI_OP_NOOP, 14),
+/* 49 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 50 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 51 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 52 */ _CFFI_OP(_CFFI_OP_FUNCTION, 314), // int()(aegis128x4_mac_state *, uint8_t *, size_t)
+/* 53 */ _CFFI_OP(_CFFI_OP_POINTER, 306), // aegis128x4_mac_state *
+/* 54 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
+/* 55 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 56 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 57 */ _CFFI_OP(_CFFI_OP_FUNCTION, 314), // int()(aegis128x4_mac_state *, uint8_t const *, size_t)
+/* 58 */ _CFFI_OP(_CFFI_OP_NOOP, 53),
+/* 59 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 60 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 61 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 62 */ _CFFI_OP(_CFFI_OP_FUNCTION, 314), // int()(aegis128x4_state *, uint8_t *, size_t, size_t *, uint8_t *, size_t)
+/* 63 */ _CFFI_OP(_CFFI_OP_POINTER, 307), // aegis128x4_state *
+/* 64 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
+/* 65 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 66 */ _CFFI_OP(_CFFI_OP_NOOP, 14),
+/* 67 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
+/* 68 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
 /* 69 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 70 */ _CFFI_OP(_CFFI_OP_FUNCTION, 170), // int()(uint8_t *, uint8_t *, size_t, uint8_t const *, size_t, uint8_t const *, size_t, uint8_t const *, uint8_t const *)
-/* 71 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
+/* 70 */ _CFFI_OP(_CFFI_OP_FUNCTION, 314), // int()(aegis128x4_state *, uint8_t *, size_t, size_t *, uint8_t const *, size_t)
+/* 71 */ _CFFI_OP(_CFFI_OP_NOOP, 63),
 /* 72 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
 /* 73 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
-/* 74 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 75 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
-/* 76 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 77 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
-/* 78 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 79 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 80 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 81 */ _CFFI_OP(_CFFI_OP_FUNCTION, 170), // int()(uint8_t *, uint8_t const *, size_t, size_t, uint8_t const *, size_t, uint8_t const *, uint8_t const *)
-/* 82 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
-/* 83 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 84 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
-/* 85 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
-/* 86 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 87 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
-/* 88 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 89 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 90 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 91 */ _CFFI_OP(_CFFI_OP_FUNCTION, 170), // int()(uint8_t *, uint8_t const *, size_t, uint8_t const *, size_t, uint8_t const *, size_t, uint8_t const *, uint8_t const *)
-/* 92 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
-/* 93 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 74 */ _CFFI_OP(_CFFI_OP_NOOP, 14),
+/* 75 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 76 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 77 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 78 */ _CFFI_OP(_CFFI_OP_FUNCTION, 314), // int()(aegis256_mac_state *, uint8_t *, size_t)
+/* 79 */ _CFFI_OP(_CFFI_OP_POINTER, 308), // aegis256_mac_state *
+/* 80 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
+/* 81 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 82 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 83 */ _CFFI_OP(_CFFI_OP_FUNCTION, 314), // int()(aegis256_mac_state *, uint8_t const *, size_t)
+/* 84 */ _CFFI_OP(_CFFI_OP_NOOP, 79),
+/* 85 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 86 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 87 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 88 */ _CFFI_OP(_CFFI_OP_FUNCTION, 314), // int()(aegis256_state *, uint8_t *, size_t, size_t *, uint8_t *, size_t)
+/* 89 */ _CFFI_OP(_CFFI_OP_POINTER, 309), // aegis256_state *
+/* 90 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
+/* 91 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 92 */ _CFFI_OP(_CFFI_OP_NOOP, 14),
+/* 93 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
 /* 94 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
-/* 95 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 96 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
-/* 97 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 98 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
-/* 99 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 100 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 101 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 102 */ _CFFI_OP(_CFFI_OP_FUNCTION, 170), // int()(uint8_t const *, uint8_t const *)
-/* 103 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 104 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 105 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 106 */ _CFFI_OP(_CFFI_OP_FUNCTION, 170), // int()(void)
-/* 107 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 108 */ _CFFI_OP(_CFFI_OP_FUNCTION, 3), // size_t()(void)
-/* 109 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 110 */ _CFFI_OP(_CFFI_OP_FUNCTION, 184), // void()(aegis128l_mac_state *)
-/* 111 */ _CFFI_OP(_CFFI_OP_NOOP, 1),
-/* 112 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 113 */ _CFFI_OP(_CFFI_OP_FUNCTION, 184), // void()(aegis128l_mac_state *, uint8_t const *, uint8_t const *)
-/* 114 */ _CFFI_OP(_CFFI_OP_NOOP, 1),
-/* 115 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 116 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 117 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 118 */ _CFFI_OP(_CFFI_OP_FUNCTION, 184), // void()(aegis128x2_mac_state *)
-/* 119 */ _CFFI_OP(_CFFI_OP_NOOP, 11),
-/* 120 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 121 */ _CFFI_OP(_CFFI_OP_FUNCTION, 184), // void()(aegis128x2_mac_state *, uint8_t const *, uint8_t const *)
-/* 122 */ _CFFI_OP(_CFFI_OP_NOOP, 11),
-/* 123 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 124 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 125 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 126 */ _CFFI_OP(_CFFI_OP_FUNCTION, 184), // void()(aegis128x4_mac_state *)
-/* 127 */ _CFFI_OP(_CFFI_OP_NOOP, 21),
-/* 128 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 129 */ _CFFI_OP(_CFFI_OP_FUNCTION, 184), // void()(aegis128x4_mac_state *, uint8_t const *, uint8_t const *)
-/* 130 */ _CFFI_OP(_CFFI_OP_NOOP, 21),
-/* 131 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 132 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 133 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 134 */ _CFFI_OP(_CFFI_OP_FUNCTION, 184), // void()(aegis256_mac_state *)
-/* 135 */ _CFFI_OP(_CFFI_OP_NOOP, 31),
-/* 136 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 137 */ _CFFI_OP(_CFFI_OP_FUNCTION, 184), // void()(aegis256_mac_state *, uint8_t const *, uint8_t const *)
-/* 138 */ _CFFI_OP(_CFFI_OP_NOOP, 31),
-/* 139 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 140 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 141 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 142 */ _CFFI_OP(_CFFI_OP_FUNCTION, 184), // void()(aegis256x2_mac_state *)
-/* 143 */ _CFFI_OP(_CFFI_OP_NOOP, 41),
-/* 144 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 145 */ _CFFI_OP(_CFFI_OP_FUNCTION, 184), // void()(aegis256x2_mac_state *, uint8_t const *, uint8_t const *)
-/* 146 */ _CFFI_OP(_CFFI_OP_NOOP, 41),
-/* 147 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 148 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 149 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 150 */ _CFFI_OP(_CFFI_OP_FUNCTION, 184), // void()(aegis256x4_mac_state *)
-/* 151 */ _CFFI_OP(_CFFI_OP_NOOP, 51),
-/* 152 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 153 */ _CFFI_OP(_CFFI_OP_FUNCTION, 184), // void()(aegis256x4_mac_state *, uint8_t const *, uint8_t const *)
-/* 154 */ _CFFI_OP(_CFFI_OP_NOOP, 51),
-/* 155 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 156 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 157 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 158 */ _CFFI_OP(_CFFI_OP_FUNCTION, 184), // void()(uint8_t *, size_t, uint8_t const *, uint8_t const *)
-/* 159 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
+/* 95 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 96 */ _CFFI_OP(_CFFI_OP_FUNCTION, 314), // int()(aegis256_state *, uint8_t *, size_t, size_t *, uint8_t const *, size_t)
+/* 97 */ _CFFI_OP(_CFFI_OP_NOOP, 89),
+/* 98 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
+/* 99 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 100 */ _CFFI_OP(_CFFI_OP_NOOP, 14),
+/* 101 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 102 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 103 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 104 */ _CFFI_OP(_CFFI_OP_FUNCTION, 314), // int()(aegis256x2_mac_state *, uint8_t *, size_t)
+/* 105 */ _CFFI_OP(_CFFI_OP_POINTER, 310), // aegis256x2_mac_state *
+/* 106 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
+/* 107 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 108 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 109 */ _CFFI_OP(_CFFI_OP_FUNCTION, 314), // int()(aegis256x2_mac_state *, uint8_t const *, size_t)
+/* 110 */ _CFFI_OP(_CFFI_OP_NOOP, 105),
+/* 111 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 112 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 113 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 114 */ _CFFI_OP(_CFFI_OP_FUNCTION, 314), // int()(aegis256x2_state *, uint8_t *, size_t, size_t *, uint8_t *, size_t)
+/* 115 */ _CFFI_OP(_CFFI_OP_POINTER, 311), // aegis256x2_state *
+/* 116 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
+/* 117 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 118 */ _CFFI_OP(_CFFI_OP_NOOP, 14),
+/* 119 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
+/* 120 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 121 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 122 */ _CFFI_OP(_CFFI_OP_FUNCTION, 314), // int()(aegis256x2_state *, uint8_t *, size_t, size_t *, uint8_t const *, size_t)
+/* 123 */ _CFFI_OP(_CFFI_OP_NOOP, 115),
+/* 124 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
+/* 125 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 126 */ _CFFI_OP(_CFFI_OP_NOOP, 14),
+/* 127 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 128 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 129 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 130 */ _CFFI_OP(_CFFI_OP_FUNCTION, 314), // int()(aegis256x4_mac_state *, uint8_t *, size_t)
+/* 131 */ _CFFI_OP(_CFFI_OP_POINTER, 312), // aegis256x4_mac_state *
+/* 132 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
+/* 133 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 134 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 135 */ _CFFI_OP(_CFFI_OP_FUNCTION, 314), // int()(aegis256x4_mac_state *, uint8_t const *, size_t)
+/* 136 */ _CFFI_OP(_CFFI_OP_NOOP, 131),
+/* 137 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 138 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 139 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 140 */ _CFFI_OP(_CFFI_OP_FUNCTION, 314), // int()(aegis256x4_state *, uint8_t *, size_t, size_t *, uint8_t *, size_t)
+/* 141 */ _CFFI_OP(_CFFI_OP_POINTER, 313), // aegis256x4_state *
+/* 142 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
+/* 143 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 144 */ _CFFI_OP(_CFFI_OP_NOOP, 14),
+/* 145 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
+/* 146 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 147 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 148 */ _CFFI_OP(_CFFI_OP_FUNCTION, 314), // int()(aegis256x4_state *, uint8_t *, size_t, size_t *, uint8_t const *, size_t)
+/* 149 */ _CFFI_OP(_CFFI_OP_NOOP, 141),
+/* 150 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
+/* 151 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 152 */ _CFFI_OP(_CFFI_OP_NOOP, 14),
+/* 153 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 154 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 155 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 156 */ _CFFI_OP(_CFFI_OP_FUNCTION, 314), // int()(uint8_t *, size_t, uint8_t const *, size_t, uint8_t const *, size_t, uint8_t const *, uint8_t const *)
+/* 157 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
+/* 158 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 159 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
 /* 160 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
 /* 161 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 162 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
-/* 163 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 164 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 0), // aegis128l_mac_state
-/* 165 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 1), // aegis128x2_mac_state
-/* 166 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 2), // aegis128x4_mac_state
-/* 167 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 3), // aegis256_mac_state
-/* 168 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 4), // aegis256x2_mac_state
-/* 169 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 5), // aegis256x4_mac_state
-/* 170 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7), // int
-/* 171 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 18), // uint8_t
-/* 172 */ _CFFI_OP(_CFFI_OP_ARRAY, 171), // uint8_t[1344]
-/* 173 */ (_cffi_opcode_t)(1344),
-/* 174 */ _CFFI_OP(_CFFI_OP_ARRAY, 171), // uint8_t[288]
-/* 175 */ (_cffi_opcode_t)(288),
-/* 176 */ _CFFI_OP(_CFFI_OP_ARRAY, 171), // uint8_t[384]
-/* 177 */ (_cffi_opcode_t)(384),
-/* 178 */ _CFFI_OP(_CFFI_OP_ARRAY, 171), // uint8_t[512]
-/* 179 */ (_cffi_opcode_t)(512),
-/* 180 */ _CFFI_OP(_CFFI_OP_ARRAY, 171), // uint8_t[704]
-/* 181 */ (_cffi_opcode_t)(704),
-/* 182 */ _CFFI_OP(_CFFI_OP_ARRAY, 171), // uint8_t[960]
-/* 183 */ (_cffi_opcode_t)(960),
-/* 184 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 0), // void
+/* 162 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 163 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 164 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 165 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 166 */ _CFFI_OP(_CFFI_OP_FUNCTION, 314), // int()(uint8_t *, uint8_t *, size_t, uint8_t const *, size_t, uint8_t const *, size_t, uint8_t const *, uint8_t const *)
+/* 167 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
+/* 168 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
+/* 169 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 170 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 171 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 172 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 173 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 174 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 175 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 176 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 177 */ _CFFI_OP(_CFFI_OP_FUNCTION, 314), // int()(uint8_t *, uint8_t const *, size_t, size_t, uint8_t const *, size_t, uint8_t const *, uint8_t const *)
+/* 178 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
+/* 179 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 180 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 181 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 182 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 183 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 184 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 185 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 186 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 187 */ _CFFI_OP(_CFFI_OP_FUNCTION, 314), // int()(uint8_t *, uint8_t const *, size_t, uint8_t const *, size_t, uint8_t const *, size_t, uint8_t const *, uint8_t const *)
+/* 188 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
+/* 189 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 190 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 191 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 192 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 193 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 194 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 195 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 196 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 197 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 198 */ _CFFI_OP(_CFFI_OP_FUNCTION, 314), // int()(uint8_t const *, uint8_t const *)
+/* 199 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 200 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 201 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 202 */ _CFFI_OP(_CFFI_OP_FUNCTION, 314), // int()(void)
+/* 203 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 204 */ _CFFI_OP(_CFFI_OP_FUNCTION, 3), // size_t()(void)
+/* 205 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 206 */ _CFFI_OP(_CFFI_OP_FUNCTION, 340), // void()(aegis128l_mac_state *)
+/* 207 */ _CFFI_OP(_CFFI_OP_NOOP, 1),
+/* 208 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 209 */ _CFFI_OP(_CFFI_OP_FUNCTION, 340), // void()(aegis128l_mac_state *, uint8_t const *, uint8_t const *)
+/* 210 */ _CFFI_OP(_CFFI_OP_NOOP, 1),
+/* 211 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 212 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 213 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 214 */ _CFFI_OP(_CFFI_OP_FUNCTION, 340), // void()(aegis128l_state *, uint8_t const *, size_t, uint8_t const *, uint8_t const *)
+/* 215 */ _CFFI_OP(_CFFI_OP_NOOP, 11),
+/* 216 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 217 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 218 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 219 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 220 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 221 */ _CFFI_OP(_CFFI_OP_FUNCTION, 340), // void()(aegis128x2_mac_state *)
+/* 222 */ _CFFI_OP(_CFFI_OP_NOOP, 27),
+/* 223 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 224 */ _CFFI_OP(_CFFI_OP_FUNCTION, 340), // void()(aegis128x2_mac_state *, uint8_t const *, uint8_t const *)
+/* 225 */ _CFFI_OP(_CFFI_OP_NOOP, 27),
+/* 226 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 227 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 228 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 229 */ _CFFI_OP(_CFFI_OP_FUNCTION, 340), // void()(aegis128x2_state *, uint8_t const *, size_t, uint8_t const *, uint8_t const *)
+/* 230 */ _CFFI_OP(_CFFI_OP_NOOP, 37),
+/* 231 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 232 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 233 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 234 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 235 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 236 */ _CFFI_OP(_CFFI_OP_FUNCTION, 340), // void()(aegis128x4_mac_state *)
+/* 237 */ _CFFI_OP(_CFFI_OP_NOOP, 53),
+/* 238 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 239 */ _CFFI_OP(_CFFI_OP_FUNCTION, 340), // void()(aegis128x4_mac_state *, uint8_t const *, uint8_t const *)
+/* 240 */ _CFFI_OP(_CFFI_OP_NOOP, 53),
+/* 241 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 242 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 243 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 244 */ _CFFI_OP(_CFFI_OP_FUNCTION, 340), // void()(aegis128x4_state *, uint8_t const *, size_t, uint8_t const *, uint8_t const *)
+/* 245 */ _CFFI_OP(_CFFI_OP_NOOP, 63),
+/* 246 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 247 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 248 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 249 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 250 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 251 */ _CFFI_OP(_CFFI_OP_FUNCTION, 340), // void()(aegis256_mac_state *)
+/* 252 */ _CFFI_OP(_CFFI_OP_NOOP, 79),
+/* 253 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 254 */ _CFFI_OP(_CFFI_OP_FUNCTION, 340), // void()(aegis256_mac_state *, uint8_t const *, uint8_t const *)
+/* 255 */ _CFFI_OP(_CFFI_OP_NOOP, 79),
+/* 256 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 257 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 258 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 259 */ _CFFI_OP(_CFFI_OP_FUNCTION, 340), // void()(aegis256_state *, uint8_t const *, size_t, uint8_t const *, uint8_t const *)
+/* 260 */ _CFFI_OP(_CFFI_OP_NOOP, 89),
+/* 261 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 262 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 263 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 264 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 265 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 266 */ _CFFI_OP(_CFFI_OP_FUNCTION, 340), // void()(aegis256x2_mac_state *)
+/* 267 */ _CFFI_OP(_CFFI_OP_NOOP, 105),
+/* 268 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 269 */ _CFFI_OP(_CFFI_OP_FUNCTION, 340), // void()(aegis256x2_mac_state *, uint8_t const *, uint8_t const *)
+/* 270 */ _CFFI_OP(_CFFI_OP_NOOP, 105),
+/* 271 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 272 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 273 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 274 */ _CFFI_OP(_CFFI_OP_FUNCTION, 340), // void()(aegis256x2_state *, uint8_t const *, size_t, uint8_t const *, uint8_t const *)
+/* 275 */ _CFFI_OP(_CFFI_OP_NOOP, 115),
+/* 276 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 277 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 278 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 279 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 280 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 281 */ _CFFI_OP(_CFFI_OP_FUNCTION, 340), // void()(aegis256x4_mac_state *)
+/* 282 */ _CFFI_OP(_CFFI_OP_NOOP, 131),
+/* 283 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 284 */ _CFFI_OP(_CFFI_OP_FUNCTION, 340), // void()(aegis256x4_mac_state *, uint8_t const *, uint8_t const *)
+/* 285 */ _CFFI_OP(_CFFI_OP_NOOP, 131),
+/* 286 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 287 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 288 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 289 */ _CFFI_OP(_CFFI_OP_FUNCTION, 340), // void()(aegis256x4_state *, uint8_t const *, size_t, uint8_t const *, uint8_t const *)
+/* 290 */ _CFFI_OP(_CFFI_OP_NOOP, 141),
+/* 291 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 292 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 293 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 294 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 295 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 296 */ _CFFI_OP(_CFFI_OP_FUNCTION, 340), // void()(uint8_t *, size_t, uint8_t const *, uint8_t const *)
+/* 297 */ _CFFI_OP(_CFFI_OP_NOOP, 2),
+/* 298 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28),
+/* 299 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 300 */ _CFFI_OP(_CFFI_OP_NOOP, 7),
+/* 301 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 302 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 0), // aegis128l_mac_state
+/* 303 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 1), // aegis128l_state
+/* 304 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 2), // aegis128x2_mac_state
+/* 305 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 3), // aegis128x2_state
+/* 306 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 4), // aegis128x4_mac_state
+/* 307 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 5), // aegis128x4_state
+/* 308 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 6), // aegis256_mac_state
+/* 309 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 7), // aegis256_state
+/* 310 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 8), // aegis256x2_mac_state
+/* 311 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 9), // aegis256x2_state
+/* 312 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 10), // aegis256x4_mac_state
+/* 313 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 11), // aegis256x4_state
+/* 314 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7), // int
+/* 315 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 18), // uint8_t
+/* 316 */ _CFFI_OP(_CFFI_OP_ARRAY, 315), // uint8_t[1344]
+/* 317 */ (_cffi_opcode_t)(1344),
+/* 318 */ _CFFI_OP(_CFFI_OP_ARRAY, 315), // uint8_t[192]
+/* 319 */ (_cffi_opcode_t)(192),
+/* 320 */ _CFFI_OP(_CFFI_OP_ARRAY, 315), // uint8_t[256]
+/* 321 */ (_cffi_opcode_t)(256),
+/* 322 */ _CFFI_OP(_CFFI_OP_ARRAY, 315), // uint8_t[288]
+/* 323 */ (_cffi_opcode_t)(288),
+/* 324 */ _CFFI_OP(_CFFI_OP_ARRAY, 315), // uint8_t[320]
+/* 325 */ (_cffi_opcode_t)(320),
+/* 326 */ _CFFI_OP(_CFFI_OP_ARRAY, 315), // uint8_t[384]
+/* 327 */ (_cffi_opcode_t)(384),
+/* 328 */ _CFFI_OP(_CFFI_OP_ARRAY, 315), // uint8_t[448]
+/* 329 */ (_cffi_opcode_t)(448),
+/* 330 */ _CFFI_OP(_CFFI_OP_ARRAY, 315), // uint8_t[512]
+/* 331 */ (_cffi_opcode_t)(512),
+/* 332 */ _CFFI_OP(_CFFI_OP_ARRAY, 315), // uint8_t[576]
+/* 333 */ (_cffi_opcode_t)(576),
+/* 334 */ _CFFI_OP(_CFFI_OP_ARRAY, 315), // uint8_t[704]
+/* 335 */ (_cffi_opcode_t)(704),
+/* 336 */ _CFFI_OP(_CFFI_OP_ARRAY, 315), // uint8_t[832]
+/* 337 */ (_cffi_opcode_t)(832),
+/* 338 */ _CFFI_OP(_CFFI_OP_ARRAY, 315), // uint8_t[960]
+/* 339 */ (_cffi_opcode_t)(960),
+/* 340 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 0), // void
 };
 
 _CFFI_UNUSED_FN
@@ -780,6 +936,15 @@ static void _cffi_checkfld_typedef_aegis128l_mac_state(aegis128l_mac_state *p)
 struct _cffi_align_typedef_aegis128l_mac_state { char x; aegis128l_mac_state y; };
 
 _CFFI_UNUSED_FN
+static void _cffi_checkfld_typedef_aegis128l_state(aegis128l_state *p)
+{
+  /* only to generate compile-time warnings or errors */
+  (void)p;
+  { uint8_t(*tmp)[256] = &p->opaque; (void)tmp; }
+}
+struct _cffi_align_typedef_aegis128l_state { char x; aegis128l_state y; };
+
+_CFFI_UNUSED_FN
 static void _cffi_checkfld_typedef_aegis128x2_mac_state(aegis128x2_mac_state *p)
 {
   /* only to generate compile-time warnings or errors */
@@ -787,6 +952,15 @@ static void _cffi_checkfld_typedef_aegis128x2_mac_state(aegis128x2_mac_state *p)
   { uint8_t(*tmp)[704] = &p->opaque; (void)tmp; }
 }
 struct _cffi_align_typedef_aegis128x2_mac_state { char x; aegis128x2_mac_state y; };
+
+_CFFI_UNUSED_FN
+static void _cffi_checkfld_typedef_aegis128x2_state(aegis128x2_state *p)
+{
+  /* only to generate compile-time warnings or errors */
+  (void)p;
+  { uint8_t(*tmp)[448] = &p->opaque; (void)tmp; }
+}
+struct _cffi_align_typedef_aegis128x2_state { char x; aegis128x2_state y; };
 
 _CFFI_UNUSED_FN
 static void _cffi_checkfld_typedef_aegis128x4_mac_state(aegis128x4_mac_state *p)
@@ -798,6 +972,15 @@ static void _cffi_checkfld_typedef_aegis128x4_mac_state(aegis128x4_mac_state *p)
 struct _cffi_align_typedef_aegis128x4_mac_state { char x; aegis128x4_mac_state y; };
 
 _CFFI_UNUSED_FN
+static void _cffi_checkfld_typedef_aegis128x4_state(aegis128x4_state *p)
+{
+  /* only to generate compile-time warnings or errors */
+  (void)p;
+  { uint8_t(*tmp)[832] = &p->opaque; (void)tmp; }
+}
+struct _cffi_align_typedef_aegis128x4_state { char x; aegis128x4_state y; };
+
+_CFFI_UNUSED_FN
 static void _cffi_checkfld_typedef_aegis256_mac_state(aegis256_mac_state *p)
 {
   /* only to generate compile-time warnings or errors */
@@ -805,6 +988,15 @@ static void _cffi_checkfld_typedef_aegis256_mac_state(aegis256_mac_state *p)
   { uint8_t(*tmp)[288] = &p->opaque; (void)tmp; }
 }
 struct _cffi_align_typedef_aegis256_mac_state { char x; aegis256_mac_state y; };
+
+_CFFI_UNUSED_FN
+static void _cffi_checkfld_typedef_aegis256_state(aegis256_state *p)
+{
+  /* only to generate compile-time warnings or errors */
+  (void)p;
+  { uint8_t(*tmp)[192] = &p->opaque; (void)tmp; }
+}
+struct _cffi_align_typedef_aegis256_state { char x; aegis256_state y; };
 
 _CFFI_UNUSED_FN
 static void _cffi_checkfld_typedef_aegis256x2_mac_state(aegis256x2_mac_state *p)
@@ -816,6 +1008,15 @@ static void _cffi_checkfld_typedef_aegis256x2_mac_state(aegis256x2_mac_state *p)
 struct _cffi_align_typedef_aegis256x2_mac_state { char x; aegis256x2_mac_state y; };
 
 _CFFI_UNUSED_FN
+static void _cffi_checkfld_typedef_aegis256x2_state(aegis256x2_state *p)
+{
+  /* only to generate compile-time warnings or errors */
+  (void)p;
+  { uint8_t(*tmp)[320] = &p->opaque; (void)tmp; }
+}
+struct _cffi_align_typedef_aegis256x2_state { char x; aegis256x2_state y; };
+
+_CFFI_UNUSED_FN
 static void _cffi_checkfld_typedef_aegis256x4_mac_state(aegis256x4_mac_state *p)
 {
   /* only to generate compile-time warnings or errors */
@@ -823,6 +1024,15 @@ static void _cffi_checkfld_typedef_aegis256x4_mac_state(aegis256x4_mac_state *p)
   { uint8_t(*tmp)[960] = &p->opaque; (void)tmp; }
 }
 struct _cffi_align_typedef_aegis256x4_mac_state { char x; aegis256x4_mac_state y; };
+
+_CFFI_UNUSED_FN
+static void _cffi_checkfld_typedef_aegis256x4_state(aegis256x4_state *p)
+{
+  /* only to generate compile-time warnings or errors */
+  (void)p;
+  { uint8_t(*tmp)[576] = &p->opaque; (void)tmp; }
+}
+struct _cffi_align_typedef_aegis256x4_state { char x; aegis256x4_state y; };
 
 static size_t _cffi_d_aegis128l_abytes_max(void)
 {
@@ -1641,6 +1851,433 @@ _cffi_f_aegis128l_npubbytes(PyObject *self, PyObject *noarg)
 #  define _cffi_f_aegis128l_npubbytes _cffi_d_aegis128l_npubbytes
 #endif
 
+static int _cffi_d_aegis128l_state_decrypt_detached_final(aegis128l_state * x0, uint8_t * x1, size_t x2, size_t * x3, uint8_t const * x4, size_t x5)
+{
+  return aegis128l_state_decrypt_detached_final(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_aegis128l_state_decrypt_detached_final(PyObject *self, PyObject *args)
+{
+  aegis128l_state * x0;
+  uint8_t * x1;
+  size_t x2;
+  size_t * x3;
+  uint8_t const * x4;
+  size_t x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  int result;
+  PyObject *pyresult;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "aegis128l_state_decrypt_detached_final", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(11), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (aegis128l_state *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(11), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(2), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (uint8_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(2), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x2 = _cffi_to_c_int(arg2, size_t);
+  if (x2 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(14), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (size_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(14), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = _cffi_to_c_int(arg5, size_t);
+  if (x5 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { result = aegis128l_state_decrypt_detached_final(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  pyresult = _cffi_from_c_int(result, int);
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  return pyresult;
+}
+#else
+#  define _cffi_f_aegis128l_state_decrypt_detached_final _cffi_d_aegis128l_state_decrypt_detached_final
+#endif
+
+static int _cffi_d_aegis128l_state_decrypt_detached_update(aegis128l_state * x0, uint8_t * x1, size_t x2, size_t * x3, uint8_t const * x4, size_t x5)
+{
+  return aegis128l_state_decrypt_detached_update(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_aegis128l_state_decrypt_detached_update(PyObject *self, PyObject *args)
+{
+  aegis128l_state * x0;
+  uint8_t * x1;
+  size_t x2;
+  size_t * x3;
+  uint8_t const * x4;
+  size_t x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  int result;
+  PyObject *pyresult;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "aegis128l_state_decrypt_detached_update", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(11), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (aegis128l_state *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(11), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(2), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (uint8_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(2), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x2 = _cffi_to_c_int(arg2, size_t);
+  if (x2 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(14), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (size_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(14), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = _cffi_to_c_int(arg5, size_t);
+  if (x5 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { result = aegis128l_state_decrypt_detached_update(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  pyresult = _cffi_from_c_int(result, int);
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  return pyresult;
+}
+#else
+#  define _cffi_f_aegis128l_state_decrypt_detached_update _cffi_d_aegis128l_state_decrypt_detached_update
+#endif
+
+static int _cffi_d_aegis128l_state_encrypt_detached_final(aegis128l_state * x0, uint8_t * x1, size_t x2, size_t * x3, uint8_t * x4, size_t x5)
+{
+  return aegis128l_state_encrypt_detached_final(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_aegis128l_state_encrypt_detached_final(PyObject *self, PyObject *args)
+{
+  aegis128l_state * x0;
+  uint8_t * x1;
+  size_t x2;
+  size_t * x3;
+  uint8_t * x4;
+  size_t x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  int result;
+  PyObject *pyresult;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "aegis128l_state_encrypt_detached_final", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(11), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (aegis128l_state *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(11), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(2), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (uint8_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(2), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x2 = _cffi_to_c_int(arg2, size_t);
+  if (x2 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(14), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (size_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(14), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(2), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (uint8_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(2), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = _cffi_to_c_int(arg5, size_t);
+  if (x5 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { result = aegis128l_state_encrypt_detached_final(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  pyresult = _cffi_from_c_int(result, int);
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  return pyresult;
+}
+#else
+#  define _cffi_f_aegis128l_state_encrypt_detached_final _cffi_d_aegis128l_state_encrypt_detached_final
+#endif
+
+static int _cffi_d_aegis128l_state_encrypt_update(aegis128l_state * x0, uint8_t * x1, size_t x2, size_t * x3, uint8_t const * x4, size_t x5)
+{
+  return aegis128l_state_encrypt_update(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_aegis128l_state_encrypt_update(PyObject *self, PyObject *args)
+{
+  aegis128l_state * x0;
+  uint8_t * x1;
+  size_t x2;
+  size_t * x3;
+  uint8_t const * x4;
+  size_t x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  int result;
+  PyObject *pyresult;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "aegis128l_state_encrypt_update", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(11), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (aegis128l_state *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(11), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(2), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (uint8_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(2), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x2 = _cffi_to_c_int(arg2, size_t);
+  if (x2 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(14), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (size_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(14), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = _cffi_to_c_int(arg5, size_t);
+  if (x5 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { result = aegis128l_state_encrypt_update(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  pyresult = _cffi_from_c_int(result, int);
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  return pyresult;
+}
+#else
+#  define _cffi_f_aegis128l_state_encrypt_update _cffi_d_aegis128l_state_encrypt_update
+#endif
+
+static void _cffi_d_aegis128l_state_init(aegis128l_state * x0, uint8_t const * x1, size_t x2, uint8_t const * x3, uint8_t const * x4)
+{
+  aegis128l_state_init(x0, x1, x2, x3, x4);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_aegis128l_state_init(PyObject *self, PyObject *args)
+{
+  aegis128l_state * x0;
+  uint8_t const * x1;
+  size_t x2;
+  uint8_t const * x3;
+  uint8_t const * x4;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+
+  if (!PyArg_UnpackTuple(args, "aegis128l_state_init", 5, 5, &arg0, &arg1, &arg2, &arg3, &arg4))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(11), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (aegis128l_state *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(11), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x2 = _cffi_to_c_int(arg2, size_t);
+  if (x2 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { aegis128l_state_init(x0, x1, x2, x3, x4); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_aegis128l_state_init _cffi_d_aegis128l_state_init
+#endif
+
 static void _cffi_d_aegis128l_stream(uint8_t * x0, size_t x1, uint8_t const * x2, uint8_t const * x3)
 {
   aegis128l_stream(x0, x1, x2, x3);
@@ -2066,10 +2703,10 @@ _cffi_f_aegis128x2_mac_final(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(11), arg0, (char **)&x0);
+      _cffi_type(27), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (aegis128x2_mac_state *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(11), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(27), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -2123,10 +2760,10 @@ _cffi_f_aegis128x2_mac_init(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(11), arg0, (char **)&x0);
+      _cffi_type(27), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (aegis128x2_mac_state *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(11), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(27), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -2177,10 +2814,10 @@ _cffi_f_aegis128x2_mac_reset(PyObject *self, PyObject *arg0)
   struct _cffi_freeme_s *large_args_free = NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(11), arg0, (char **)&x0);
+      _cffi_type(27), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (aegis128x2_mac_state *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(11), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(27), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -2223,10 +2860,10 @@ _cffi_f_aegis128x2_mac_update(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(11), arg0, (char **)&x0);
+      _cffi_type(27), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (aegis128x2_mac_state *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(11), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(27), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -2282,10 +2919,10 @@ _cffi_f_aegis128x2_mac_verify(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(11), arg0, (char **)&x0);
+      _cffi_type(27), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (aegis128x2_mac_state *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(11), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(27), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -2342,6 +2979,433 @@ _cffi_f_aegis128x2_npubbytes(PyObject *self, PyObject *noarg)
 }
 #else
 #  define _cffi_f_aegis128x2_npubbytes _cffi_d_aegis128x2_npubbytes
+#endif
+
+static int _cffi_d_aegis128x2_state_decrypt_detached_final(aegis128x2_state * x0, uint8_t * x1, size_t x2, size_t * x3, uint8_t const * x4, size_t x5)
+{
+  return aegis128x2_state_decrypt_detached_final(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_aegis128x2_state_decrypt_detached_final(PyObject *self, PyObject *args)
+{
+  aegis128x2_state * x0;
+  uint8_t * x1;
+  size_t x2;
+  size_t * x3;
+  uint8_t const * x4;
+  size_t x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  int result;
+  PyObject *pyresult;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "aegis128x2_state_decrypt_detached_final", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(37), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (aegis128x2_state *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(37), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(2), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (uint8_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(2), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x2 = _cffi_to_c_int(arg2, size_t);
+  if (x2 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(14), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (size_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(14), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = _cffi_to_c_int(arg5, size_t);
+  if (x5 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { result = aegis128x2_state_decrypt_detached_final(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  pyresult = _cffi_from_c_int(result, int);
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  return pyresult;
+}
+#else
+#  define _cffi_f_aegis128x2_state_decrypt_detached_final _cffi_d_aegis128x2_state_decrypt_detached_final
+#endif
+
+static int _cffi_d_aegis128x2_state_decrypt_detached_update(aegis128x2_state * x0, uint8_t * x1, size_t x2, size_t * x3, uint8_t const * x4, size_t x5)
+{
+  return aegis128x2_state_decrypt_detached_update(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_aegis128x2_state_decrypt_detached_update(PyObject *self, PyObject *args)
+{
+  aegis128x2_state * x0;
+  uint8_t * x1;
+  size_t x2;
+  size_t * x3;
+  uint8_t const * x4;
+  size_t x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  int result;
+  PyObject *pyresult;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "aegis128x2_state_decrypt_detached_update", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(37), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (aegis128x2_state *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(37), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(2), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (uint8_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(2), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x2 = _cffi_to_c_int(arg2, size_t);
+  if (x2 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(14), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (size_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(14), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = _cffi_to_c_int(arg5, size_t);
+  if (x5 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { result = aegis128x2_state_decrypt_detached_update(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  pyresult = _cffi_from_c_int(result, int);
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  return pyresult;
+}
+#else
+#  define _cffi_f_aegis128x2_state_decrypt_detached_update _cffi_d_aegis128x2_state_decrypt_detached_update
+#endif
+
+static int _cffi_d_aegis128x2_state_encrypt_detached_final(aegis128x2_state * x0, uint8_t * x1, size_t x2, size_t * x3, uint8_t * x4, size_t x5)
+{
+  return aegis128x2_state_encrypt_detached_final(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_aegis128x2_state_encrypt_detached_final(PyObject *self, PyObject *args)
+{
+  aegis128x2_state * x0;
+  uint8_t * x1;
+  size_t x2;
+  size_t * x3;
+  uint8_t * x4;
+  size_t x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  int result;
+  PyObject *pyresult;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "aegis128x2_state_encrypt_detached_final", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(37), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (aegis128x2_state *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(37), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(2), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (uint8_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(2), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x2 = _cffi_to_c_int(arg2, size_t);
+  if (x2 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(14), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (size_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(14), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(2), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (uint8_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(2), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = _cffi_to_c_int(arg5, size_t);
+  if (x5 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { result = aegis128x2_state_encrypt_detached_final(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  pyresult = _cffi_from_c_int(result, int);
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  return pyresult;
+}
+#else
+#  define _cffi_f_aegis128x2_state_encrypt_detached_final _cffi_d_aegis128x2_state_encrypt_detached_final
+#endif
+
+static int _cffi_d_aegis128x2_state_encrypt_update(aegis128x2_state * x0, uint8_t * x1, size_t x2, size_t * x3, uint8_t const * x4, size_t x5)
+{
+  return aegis128x2_state_encrypt_update(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_aegis128x2_state_encrypt_update(PyObject *self, PyObject *args)
+{
+  aegis128x2_state * x0;
+  uint8_t * x1;
+  size_t x2;
+  size_t * x3;
+  uint8_t const * x4;
+  size_t x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  int result;
+  PyObject *pyresult;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "aegis128x2_state_encrypt_update", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(37), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (aegis128x2_state *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(37), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(2), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (uint8_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(2), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x2 = _cffi_to_c_int(arg2, size_t);
+  if (x2 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(14), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (size_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(14), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = _cffi_to_c_int(arg5, size_t);
+  if (x5 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { result = aegis128x2_state_encrypt_update(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  pyresult = _cffi_from_c_int(result, int);
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  return pyresult;
+}
+#else
+#  define _cffi_f_aegis128x2_state_encrypt_update _cffi_d_aegis128x2_state_encrypt_update
+#endif
+
+static void _cffi_d_aegis128x2_state_init(aegis128x2_state * x0, uint8_t const * x1, size_t x2, uint8_t const * x3, uint8_t const * x4)
+{
+  aegis128x2_state_init(x0, x1, x2, x3, x4);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_aegis128x2_state_init(PyObject *self, PyObject *args)
+{
+  aegis128x2_state * x0;
+  uint8_t const * x1;
+  size_t x2;
+  uint8_t const * x3;
+  uint8_t const * x4;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+
+  if (!PyArg_UnpackTuple(args, "aegis128x2_state_init", 5, 5, &arg0, &arg1, &arg2, &arg3, &arg4))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(37), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (aegis128x2_state *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(37), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x2 = _cffi_to_c_int(arg2, size_t);
+  if (x2 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { aegis128x2_state_init(x0, x1, x2, x3, x4); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_aegis128x2_state_init _cffi_d_aegis128x2_state_init
 #endif
 
 static size_t _cffi_d_aegis128x4_abytes_max(void)
@@ -2675,10 +3739,10 @@ _cffi_f_aegis128x4_mac_final(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(21), arg0, (char **)&x0);
+      _cffi_type(53), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (aegis128x4_mac_state *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(21), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(53), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -2732,10 +3796,10 @@ _cffi_f_aegis128x4_mac_init(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(21), arg0, (char **)&x0);
+      _cffi_type(53), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (aegis128x4_mac_state *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(21), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(53), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -2786,10 +3850,10 @@ _cffi_f_aegis128x4_mac_reset(PyObject *self, PyObject *arg0)
   struct _cffi_freeme_s *large_args_free = NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(21), arg0, (char **)&x0);
+      _cffi_type(53), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (aegis128x4_mac_state *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(21), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(53), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -2832,10 +3896,10 @@ _cffi_f_aegis128x4_mac_update(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(21), arg0, (char **)&x0);
+      _cffi_type(53), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (aegis128x4_mac_state *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(21), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(53), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -2891,10 +3955,10 @@ _cffi_f_aegis128x4_mac_verify(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(21), arg0, (char **)&x0);
+      _cffi_type(53), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (aegis128x4_mac_state *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(21), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(53), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -2951,6 +4015,433 @@ _cffi_f_aegis128x4_npubbytes(PyObject *self, PyObject *noarg)
 }
 #else
 #  define _cffi_f_aegis128x4_npubbytes _cffi_d_aegis128x4_npubbytes
+#endif
+
+static int _cffi_d_aegis128x4_state_decrypt_detached_final(aegis128x4_state * x0, uint8_t * x1, size_t x2, size_t * x3, uint8_t const * x4, size_t x5)
+{
+  return aegis128x4_state_decrypt_detached_final(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_aegis128x4_state_decrypt_detached_final(PyObject *self, PyObject *args)
+{
+  aegis128x4_state * x0;
+  uint8_t * x1;
+  size_t x2;
+  size_t * x3;
+  uint8_t const * x4;
+  size_t x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  int result;
+  PyObject *pyresult;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "aegis128x4_state_decrypt_detached_final", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(63), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (aegis128x4_state *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(63), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(2), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (uint8_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(2), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x2 = _cffi_to_c_int(arg2, size_t);
+  if (x2 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(14), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (size_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(14), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = _cffi_to_c_int(arg5, size_t);
+  if (x5 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { result = aegis128x4_state_decrypt_detached_final(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  pyresult = _cffi_from_c_int(result, int);
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  return pyresult;
+}
+#else
+#  define _cffi_f_aegis128x4_state_decrypt_detached_final _cffi_d_aegis128x4_state_decrypt_detached_final
+#endif
+
+static int _cffi_d_aegis128x4_state_decrypt_detached_update(aegis128x4_state * x0, uint8_t * x1, size_t x2, size_t * x3, uint8_t const * x4, size_t x5)
+{
+  return aegis128x4_state_decrypt_detached_update(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_aegis128x4_state_decrypt_detached_update(PyObject *self, PyObject *args)
+{
+  aegis128x4_state * x0;
+  uint8_t * x1;
+  size_t x2;
+  size_t * x3;
+  uint8_t const * x4;
+  size_t x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  int result;
+  PyObject *pyresult;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "aegis128x4_state_decrypt_detached_update", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(63), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (aegis128x4_state *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(63), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(2), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (uint8_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(2), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x2 = _cffi_to_c_int(arg2, size_t);
+  if (x2 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(14), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (size_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(14), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = _cffi_to_c_int(arg5, size_t);
+  if (x5 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { result = aegis128x4_state_decrypt_detached_update(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  pyresult = _cffi_from_c_int(result, int);
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  return pyresult;
+}
+#else
+#  define _cffi_f_aegis128x4_state_decrypt_detached_update _cffi_d_aegis128x4_state_decrypt_detached_update
+#endif
+
+static int _cffi_d_aegis128x4_state_encrypt_detached_final(aegis128x4_state * x0, uint8_t * x1, size_t x2, size_t * x3, uint8_t * x4, size_t x5)
+{
+  return aegis128x4_state_encrypt_detached_final(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_aegis128x4_state_encrypt_detached_final(PyObject *self, PyObject *args)
+{
+  aegis128x4_state * x0;
+  uint8_t * x1;
+  size_t x2;
+  size_t * x3;
+  uint8_t * x4;
+  size_t x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  int result;
+  PyObject *pyresult;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "aegis128x4_state_encrypt_detached_final", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(63), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (aegis128x4_state *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(63), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(2), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (uint8_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(2), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x2 = _cffi_to_c_int(arg2, size_t);
+  if (x2 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(14), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (size_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(14), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(2), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (uint8_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(2), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = _cffi_to_c_int(arg5, size_t);
+  if (x5 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { result = aegis128x4_state_encrypt_detached_final(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  pyresult = _cffi_from_c_int(result, int);
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  return pyresult;
+}
+#else
+#  define _cffi_f_aegis128x4_state_encrypt_detached_final _cffi_d_aegis128x4_state_encrypt_detached_final
+#endif
+
+static int _cffi_d_aegis128x4_state_encrypt_update(aegis128x4_state * x0, uint8_t * x1, size_t x2, size_t * x3, uint8_t const * x4, size_t x5)
+{
+  return aegis128x4_state_encrypt_update(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_aegis128x4_state_encrypt_update(PyObject *self, PyObject *args)
+{
+  aegis128x4_state * x0;
+  uint8_t * x1;
+  size_t x2;
+  size_t * x3;
+  uint8_t const * x4;
+  size_t x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  int result;
+  PyObject *pyresult;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "aegis128x4_state_encrypt_update", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(63), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (aegis128x4_state *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(63), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(2), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (uint8_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(2), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x2 = _cffi_to_c_int(arg2, size_t);
+  if (x2 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(14), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (size_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(14), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = _cffi_to_c_int(arg5, size_t);
+  if (x5 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { result = aegis128x4_state_encrypt_update(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  pyresult = _cffi_from_c_int(result, int);
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  return pyresult;
+}
+#else
+#  define _cffi_f_aegis128x4_state_encrypt_update _cffi_d_aegis128x4_state_encrypt_update
+#endif
+
+static void _cffi_d_aegis128x4_state_init(aegis128x4_state * x0, uint8_t const * x1, size_t x2, uint8_t const * x3, uint8_t const * x4)
+{
+  aegis128x4_state_init(x0, x1, x2, x3, x4);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_aegis128x4_state_init(PyObject *self, PyObject *args)
+{
+  aegis128x4_state * x0;
+  uint8_t const * x1;
+  size_t x2;
+  uint8_t const * x3;
+  uint8_t const * x4;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+
+  if (!PyArg_UnpackTuple(args, "aegis128x4_state_init", 5, 5, &arg0, &arg1, &arg2, &arg3, &arg4))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(63), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (aegis128x4_state *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(63), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x2 = _cffi_to_c_int(arg2, size_t);
+  if (x2 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { aegis128x4_state_init(x0, x1, x2, x3, x4); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_aegis128x4_state_init _cffi_d_aegis128x4_state_init
 #endif
 
 static size_t _cffi_d_aegis256_abytes_max(void)
@@ -3492,10 +4983,10 @@ _cffi_f_aegis256_mac_final(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(31), arg0, (char **)&x0);
+      _cffi_type(79), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (aegis256_mac_state *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(31), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(79), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -3549,10 +5040,10 @@ _cffi_f_aegis256_mac_init(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(31), arg0, (char **)&x0);
+      _cffi_type(79), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (aegis256_mac_state *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(31), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(79), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -3603,10 +5094,10 @@ _cffi_f_aegis256_mac_reset(PyObject *self, PyObject *arg0)
   struct _cffi_freeme_s *large_args_free = NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(31), arg0, (char **)&x0);
+      _cffi_type(79), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (aegis256_mac_state *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(31), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(79), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -3649,10 +5140,10 @@ _cffi_f_aegis256_mac_update(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(31), arg0, (char **)&x0);
+      _cffi_type(79), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (aegis256_mac_state *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(31), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(79), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -3708,10 +5199,10 @@ _cffi_f_aegis256_mac_verify(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(31), arg0, (char **)&x0);
+      _cffi_type(79), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (aegis256_mac_state *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(31), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(79), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -3768,6 +5259,433 @@ _cffi_f_aegis256_npubbytes(PyObject *self, PyObject *noarg)
 }
 #else
 #  define _cffi_f_aegis256_npubbytes _cffi_d_aegis256_npubbytes
+#endif
+
+static int _cffi_d_aegis256_state_decrypt_detached_final(aegis256_state * x0, uint8_t * x1, size_t x2, size_t * x3, uint8_t const * x4, size_t x5)
+{
+  return aegis256_state_decrypt_detached_final(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_aegis256_state_decrypt_detached_final(PyObject *self, PyObject *args)
+{
+  aegis256_state * x0;
+  uint8_t * x1;
+  size_t x2;
+  size_t * x3;
+  uint8_t const * x4;
+  size_t x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  int result;
+  PyObject *pyresult;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "aegis256_state_decrypt_detached_final", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(89), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (aegis256_state *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(89), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(2), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (uint8_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(2), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x2 = _cffi_to_c_int(arg2, size_t);
+  if (x2 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(14), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (size_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(14), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = _cffi_to_c_int(arg5, size_t);
+  if (x5 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { result = aegis256_state_decrypt_detached_final(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  pyresult = _cffi_from_c_int(result, int);
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  return pyresult;
+}
+#else
+#  define _cffi_f_aegis256_state_decrypt_detached_final _cffi_d_aegis256_state_decrypt_detached_final
+#endif
+
+static int _cffi_d_aegis256_state_decrypt_detached_update(aegis256_state * x0, uint8_t * x1, size_t x2, size_t * x3, uint8_t const * x4, size_t x5)
+{
+  return aegis256_state_decrypt_detached_update(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_aegis256_state_decrypt_detached_update(PyObject *self, PyObject *args)
+{
+  aegis256_state * x0;
+  uint8_t * x1;
+  size_t x2;
+  size_t * x3;
+  uint8_t const * x4;
+  size_t x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  int result;
+  PyObject *pyresult;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "aegis256_state_decrypt_detached_update", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(89), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (aegis256_state *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(89), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(2), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (uint8_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(2), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x2 = _cffi_to_c_int(arg2, size_t);
+  if (x2 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(14), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (size_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(14), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = _cffi_to_c_int(arg5, size_t);
+  if (x5 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { result = aegis256_state_decrypt_detached_update(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  pyresult = _cffi_from_c_int(result, int);
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  return pyresult;
+}
+#else
+#  define _cffi_f_aegis256_state_decrypt_detached_update _cffi_d_aegis256_state_decrypt_detached_update
+#endif
+
+static int _cffi_d_aegis256_state_encrypt_detached_final(aegis256_state * x0, uint8_t * x1, size_t x2, size_t * x3, uint8_t * x4, size_t x5)
+{
+  return aegis256_state_encrypt_detached_final(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_aegis256_state_encrypt_detached_final(PyObject *self, PyObject *args)
+{
+  aegis256_state * x0;
+  uint8_t * x1;
+  size_t x2;
+  size_t * x3;
+  uint8_t * x4;
+  size_t x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  int result;
+  PyObject *pyresult;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "aegis256_state_encrypt_detached_final", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(89), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (aegis256_state *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(89), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(2), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (uint8_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(2), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x2 = _cffi_to_c_int(arg2, size_t);
+  if (x2 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(14), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (size_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(14), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(2), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (uint8_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(2), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = _cffi_to_c_int(arg5, size_t);
+  if (x5 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { result = aegis256_state_encrypt_detached_final(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  pyresult = _cffi_from_c_int(result, int);
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  return pyresult;
+}
+#else
+#  define _cffi_f_aegis256_state_encrypt_detached_final _cffi_d_aegis256_state_encrypt_detached_final
+#endif
+
+static int _cffi_d_aegis256_state_encrypt_update(aegis256_state * x0, uint8_t * x1, size_t x2, size_t * x3, uint8_t const * x4, size_t x5)
+{
+  return aegis256_state_encrypt_update(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_aegis256_state_encrypt_update(PyObject *self, PyObject *args)
+{
+  aegis256_state * x0;
+  uint8_t * x1;
+  size_t x2;
+  size_t * x3;
+  uint8_t const * x4;
+  size_t x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  int result;
+  PyObject *pyresult;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "aegis256_state_encrypt_update", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(89), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (aegis256_state *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(89), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(2), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (uint8_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(2), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x2 = _cffi_to_c_int(arg2, size_t);
+  if (x2 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(14), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (size_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(14), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = _cffi_to_c_int(arg5, size_t);
+  if (x5 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { result = aegis256_state_encrypt_update(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  pyresult = _cffi_from_c_int(result, int);
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  return pyresult;
+}
+#else
+#  define _cffi_f_aegis256_state_encrypt_update _cffi_d_aegis256_state_encrypt_update
+#endif
+
+static void _cffi_d_aegis256_state_init(aegis256_state * x0, uint8_t const * x1, size_t x2, uint8_t const * x3, uint8_t const * x4)
+{
+  aegis256_state_init(x0, x1, x2, x3, x4);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_aegis256_state_init(PyObject *self, PyObject *args)
+{
+  aegis256_state * x0;
+  uint8_t const * x1;
+  size_t x2;
+  uint8_t const * x3;
+  uint8_t const * x4;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+
+  if (!PyArg_UnpackTuple(args, "aegis256_state_init", 5, 5, &arg0, &arg1, &arg2, &arg3, &arg4))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(89), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (aegis256_state *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(89), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x2 = _cffi_to_c_int(arg2, size_t);
+  if (x2 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { aegis256_state_init(x0, x1, x2, x3, x4); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_aegis256_state_init _cffi_d_aegis256_state_init
 #endif
 
 static void _cffi_d_aegis256_stream(uint8_t * x0, size_t x1, uint8_t const * x2, uint8_t const * x3)
@@ -4195,10 +6113,10 @@ _cffi_f_aegis256x2_mac_final(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(41), arg0, (char **)&x0);
+      _cffi_type(105), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (aegis256x2_mac_state *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(41), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(105), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -4252,10 +6170,10 @@ _cffi_f_aegis256x2_mac_init(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(41), arg0, (char **)&x0);
+      _cffi_type(105), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (aegis256x2_mac_state *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(41), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(105), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -4306,10 +6224,10 @@ _cffi_f_aegis256x2_mac_reset(PyObject *self, PyObject *arg0)
   struct _cffi_freeme_s *large_args_free = NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(41), arg0, (char **)&x0);
+      _cffi_type(105), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (aegis256x2_mac_state *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(41), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(105), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -4352,10 +6270,10 @@ _cffi_f_aegis256x2_mac_update(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(41), arg0, (char **)&x0);
+      _cffi_type(105), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (aegis256x2_mac_state *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(41), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(105), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -4411,10 +6329,10 @@ _cffi_f_aegis256x2_mac_verify(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(41), arg0, (char **)&x0);
+      _cffi_type(105), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (aegis256x2_mac_state *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(41), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(105), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -4471,6 +6389,433 @@ _cffi_f_aegis256x2_npubbytes(PyObject *self, PyObject *noarg)
 }
 #else
 #  define _cffi_f_aegis256x2_npubbytes _cffi_d_aegis256x2_npubbytes
+#endif
+
+static int _cffi_d_aegis256x2_state_decrypt_detached_final(aegis256x2_state * x0, uint8_t * x1, size_t x2, size_t * x3, uint8_t const * x4, size_t x5)
+{
+  return aegis256x2_state_decrypt_detached_final(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_aegis256x2_state_decrypt_detached_final(PyObject *self, PyObject *args)
+{
+  aegis256x2_state * x0;
+  uint8_t * x1;
+  size_t x2;
+  size_t * x3;
+  uint8_t const * x4;
+  size_t x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  int result;
+  PyObject *pyresult;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "aegis256x2_state_decrypt_detached_final", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(115), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (aegis256x2_state *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(115), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(2), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (uint8_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(2), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x2 = _cffi_to_c_int(arg2, size_t);
+  if (x2 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(14), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (size_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(14), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = _cffi_to_c_int(arg5, size_t);
+  if (x5 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { result = aegis256x2_state_decrypt_detached_final(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  pyresult = _cffi_from_c_int(result, int);
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  return pyresult;
+}
+#else
+#  define _cffi_f_aegis256x2_state_decrypt_detached_final _cffi_d_aegis256x2_state_decrypt_detached_final
+#endif
+
+static int _cffi_d_aegis256x2_state_decrypt_detached_update(aegis256x2_state * x0, uint8_t * x1, size_t x2, size_t * x3, uint8_t const * x4, size_t x5)
+{
+  return aegis256x2_state_decrypt_detached_update(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_aegis256x2_state_decrypt_detached_update(PyObject *self, PyObject *args)
+{
+  aegis256x2_state * x0;
+  uint8_t * x1;
+  size_t x2;
+  size_t * x3;
+  uint8_t const * x4;
+  size_t x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  int result;
+  PyObject *pyresult;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "aegis256x2_state_decrypt_detached_update", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(115), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (aegis256x2_state *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(115), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(2), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (uint8_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(2), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x2 = _cffi_to_c_int(arg2, size_t);
+  if (x2 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(14), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (size_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(14), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = _cffi_to_c_int(arg5, size_t);
+  if (x5 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { result = aegis256x2_state_decrypt_detached_update(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  pyresult = _cffi_from_c_int(result, int);
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  return pyresult;
+}
+#else
+#  define _cffi_f_aegis256x2_state_decrypt_detached_update _cffi_d_aegis256x2_state_decrypt_detached_update
+#endif
+
+static int _cffi_d_aegis256x2_state_encrypt_detached_final(aegis256x2_state * x0, uint8_t * x1, size_t x2, size_t * x3, uint8_t * x4, size_t x5)
+{
+  return aegis256x2_state_encrypt_detached_final(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_aegis256x2_state_encrypt_detached_final(PyObject *self, PyObject *args)
+{
+  aegis256x2_state * x0;
+  uint8_t * x1;
+  size_t x2;
+  size_t * x3;
+  uint8_t * x4;
+  size_t x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  int result;
+  PyObject *pyresult;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "aegis256x2_state_encrypt_detached_final", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(115), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (aegis256x2_state *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(115), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(2), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (uint8_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(2), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x2 = _cffi_to_c_int(arg2, size_t);
+  if (x2 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(14), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (size_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(14), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(2), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (uint8_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(2), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = _cffi_to_c_int(arg5, size_t);
+  if (x5 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { result = aegis256x2_state_encrypt_detached_final(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  pyresult = _cffi_from_c_int(result, int);
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  return pyresult;
+}
+#else
+#  define _cffi_f_aegis256x2_state_encrypt_detached_final _cffi_d_aegis256x2_state_encrypt_detached_final
+#endif
+
+static int _cffi_d_aegis256x2_state_encrypt_update(aegis256x2_state * x0, uint8_t * x1, size_t x2, size_t * x3, uint8_t const * x4, size_t x5)
+{
+  return aegis256x2_state_encrypt_update(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_aegis256x2_state_encrypt_update(PyObject *self, PyObject *args)
+{
+  aegis256x2_state * x0;
+  uint8_t * x1;
+  size_t x2;
+  size_t * x3;
+  uint8_t const * x4;
+  size_t x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  int result;
+  PyObject *pyresult;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "aegis256x2_state_encrypt_update", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(115), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (aegis256x2_state *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(115), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(2), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (uint8_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(2), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x2 = _cffi_to_c_int(arg2, size_t);
+  if (x2 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(14), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (size_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(14), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = _cffi_to_c_int(arg5, size_t);
+  if (x5 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { result = aegis256x2_state_encrypt_update(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  pyresult = _cffi_from_c_int(result, int);
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  return pyresult;
+}
+#else
+#  define _cffi_f_aegis256x2_state_encrypt_update _cffi_d_aegis256x2_state_encrypt_update
+#endif
+
+static void _cffi_d_aegis256x2_state_init(aegis256x2_state * x0, uint8_t const * x1, size_t x2, uint8_t const * x3, uint8_t const * x4)
+{
+  aegis256x2_state_init(x0, x1, x2, x3, x4);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_aegis256x2_state_init(PyObject *self, PyObject *args)
+{
+  aegis256x2_state * x0;
+  uint8_t const * x1;
+  size_t x2;
+  uint8_t const * x3;
+  uint8_t const * x4;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+
+  if (!PyArg_UnpackTuple(args, "aegis256x2_state_init", 5, 5, &arg0, &arg1, &arg2, &arg3, &arg4))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(115), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (aegis256x2_state *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(115), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x2 = _cffi_to_c_int(arg2, size_t);
+  if (x2 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { aegis256x2_state_init(x0, x1, x2, x3, x4); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_aegis256x2_state_init _cffi_d_aegis256x2_state_init
 #endif
 
 static size_t _cffi_d_aegis256x4_abytes_max(void)
@@ -4804,10 +7149,10 @@ _cffi_f_aegis256x4_mac_final(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(51), arg0, (char **)&x0);
+      _cffi_type(131), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (aegis256x4_mac_state *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(51), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(131), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -4861,10 +7206,10 @@ _cffi_f_aegis256x4_mac_init(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(51), arg0, (char **)&x0);
+      _cffi_type(131), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (aegis256x4_mac_state *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(51), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(131), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -4915,10 +7260,10 @@ _cffi_f_aegis256x4_mac_reset(PyObject *self, PyObject *arg0)
   struct _cffi_freeme_s *large_args_free = NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(51), arg0, (char **)&x0);
+      _cffi_type(131), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (aegis256x4_mac_state *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(51), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(131), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -4961,10 +7306,10 @@ _cffi_f_aegis256x4_mac_update(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(51), arg0, (char **)&x0);
+      _cffi_type(131), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (aegis256x4_mac_state *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(51), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(131), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -5020,10 +7365,10 @@ _cffi_f_aegis256x4_mac_verify(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(51), arg0, (char **)&x0);
+      _cffi_type(131), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (aegis256x4_mac_state *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(51), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(131), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -5080,6 +7425,433 @@ _cffi_f_aegis256x4_npubbytes(PyObject *self, PyObject *noarg)
 }
 #else
 #  define _cffi_f_aegis256x4_npubbytes _cffi_d_aegis256x4_npubbytes
+#endif
+
+static int _cffi_d_aegis256x4_state_decrypt_detached_final(aegis256x4_state * x0, uint8_t * x1, size_t x2, size_t * x3, uint8_t const * x4, size_t x5)
+{
+  return aegis256x4_state_decrypt_detached_final(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_aegis256x4_state_decrypt_detached_final(PyObject *self, PyObject *args)
+{
+  aegis256x4_state * x0;
+  uint8_t * x1;
+  size_t x2;
+  size_t * x3;
+  uint8_t const * x4;
+  size_t x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  int result;
+  PyObject *pyresult;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "aegis256x4_state_decrypt_detached_final", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(141), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (aegis256x4_state *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(141), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(2), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (uint8_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(2), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x2 = _cffi_to_c_int(arg2, size_t);
+  if (x2 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(14), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (size_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(14), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = _cffi_to_c_int(arg5, size_t);
+  if (x5 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { result = aegis256x4_state_decrypt_detached_final(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  pyresult = _cffi_from_c_int(result, int);
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  return pyresult;
+}
+#else
+#  define _cffi_f_aegis256x4_state_decrypt_detached_final _cffi_d_aegis256x4_state_decrypt_detached_final
+#endif
+
+static int _cffi_d_aegis256x4_state_decrypt_detached_update(aegis256x4_state * x0, uint8_t * x1, size_t x2, size_t * x3, uint8_t const * x4, size_t x5)
+{
+  return aegis256x4_state_decrypt_detached_update(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_aegis256x4_state_decrypt_detached_update(PyObject *self, PyObject *args)
+{
+  aegis256x4_state * x0;
+  uint8_t * x1;
+  size_t x2;
+  size_t * x3;
+  uint8_t const * x4;
+  size_t x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  int result;
+  PyObject *pyresult;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "aegis256x4_state_decrypt_detached_update", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(141), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (aegis256x4_state *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(141), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(2), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (uint8_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(2), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x2 = _cffi_to_c_int(arg2, size_t);
+  if (x2 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(14), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (size_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(14), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = _cffi_to_c_int(arg5, size_t);
+  if (x5 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { result = aegis256x4_state_decrypt_detached_update(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  pyresult = _cffi_from_c_int(result, int);
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  return pyresult;
+}
+#else
+#  define _cffi_f_aegis256x4_state_decrypt_detached_update _cffi_d_aegis256x4_state_decrypt_detached_update
+#endif
+
+static int _cffi_d_aegis256x4_state_encrypt_detached_final(aegis256x4_state * x0, uint8_t * x1, size_t x2, size_t * x3, uint8_t * x4, size_t x5)
+{
+  return aegis256x4_state_encrypt_detached_final(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_aegis256x4_state_encrypt_detached_final(PyObject *self, PyObject *args)
+{
+  aegis256x4_state * x0;
+  uint8_t * x1;
+  size_t x2;
+  size_t * x3;
+  uint8_t * x4;
+  size_t x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  int result;
+  PyObject *pyresult;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "aegis256x4_state_encrypt_detached_final", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(141), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (aegis256x4_state *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(141), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(2), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (uint8_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(2), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x2 = _cffi_to_c_int(arg2, size_t);
+  if (x2 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(14), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (size_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(14), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(2), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (uint8_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(2), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = _cffi_to_c_int(arg5, size_t);
+  if (x5 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { result = aegis256x4_state_encrypt_detached_final(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  pyresult = _cffi_from_c_int(result, int);
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  return pyresult;
+}
+#else
+#  define _cffi_f_aegis256x4_state_encrypt_detached_final _cffi_d_aegis256x4_state_encrypt_detached_final
+#endif
+
+static int _cffi_d_aegis256x4_state_encrypt_update(aegis256x4_state * x0, uint8_t * x1, size_t x2, size_t * x3, uint8_t const * x4, size_t x5)
+{
+  return aegis256x4_state_encrypt_update(x0, x1, x2, x3, x4, x5);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_aegis256x4_state_encrypt_update(PyObject *self, PyObject *args)
+{
+  aegis256x4_state * x0;
+  uint8_t * x1;
+  size_t x2;
+  size_t * x3;
+  uint8_t const * x4;
+  size_t x5;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  int result;
+  PyObject *pyresult;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+  PyObject *arg5;
+
+  if (!PyArg_UnpackTuple(args, "aegis256x4_state_encrypt_update", 6, 6, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(141), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (aegis256x4_state *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(141), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(2), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (uint8_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(2), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x2 = _cffi_to_c_int(arg2, size_t);
+  if (x2 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(14), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (size_t *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(14), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x5 = _cffi_to_c_int(arg5, size_t);
+  if (x5 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { result = aegis256x4_state_encrypt_update(x0, x1, x2, x3, x4, x5); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  pyresult = _cffi_from_c_int(result, int);
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  return pyresult;
+}
+#else
+#  define _cffi_f_aegis256x4_state_encrypt_update _cffi_d_aegis256x4_state_encrypt_update
+#endif
+
+static void _cffi_d_aegis256x4_state_init(aegis256x4_state * x0, uint8_t const * x1, size_t x2, uint8_t const * x3, uint8_t const * x4)
+{
+  aegis256x4_state_init(x0, x1, x2, x3, x4);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_aegis256x4_state_init(PyObject *self, PyObject *args)
+{
+  aegis256x4_state * x0;
+  uint8_t const * x1;
+  size_t x2;
+  uint8_t const * x3;
+  uint8_t const * x4;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+  PyObject *arg3;
+  PyObject *arg4;
+
+  if (!PyArg_UnpackTuple(args, "aegis256x4_state_init", 5, 5, &arg0, &arg1, &arg2, &arg3, &arg4))
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(141), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (aegis256x4_state *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(141), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  x2 = _cffi_to_c_int(arg2, size_t);
+  if (x2 == (size_t)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg3, (char **)&x3);
+  if (datasize != 0) {
+    x3 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg3, (char **)&x3,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(7), arg4, (char **)&x4);
+  if (datasize != 0) {
+    x4 = ((size_t)datasize) <= 640 ? (uint8_t const *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(7), arg4, (char **)&x4,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { aegis256x4_state_init(x0, x1, x2, x3, x4); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_aegis256x4_state_init _cffi_d_aegis256x4_state_init
 #endif
 
 static int _cffi_d_aegis_init(void)
@@ -5215,128 +7987,194 @@ _cffi_f_aegis_verify_32(PyObject *self, PyObject *args)
 #endif
 
 static const struct _cffi_global_s _cffi_globals[] = {
-  { "aegis128l_abytes_max", (void *)_cffi_f_aegis128l_abytes_max, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 108), (void *)_cffi_d_aegis128l_abytes_max },
-  { "aegis128l_abytes_min", (void *)_cffi_f_aegis128l_abytes_min, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 108), (void *)_cffi_d_aegis128l_abytes_min },
-  { "aegis128l_decrypt", (void *)_cffi_f_aegis128l_decrypt, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 81), (void *)_cffi_d_aegis128l_decrypt },
-  { "aegis128l_decrypt_detached", (void *)_cffi_f_aegis128l_decrypt_detached, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 91), (void *)_cffi_d_aegis128l_decrypt_detached },
-  { "aegis128l_encrypt", (void *)_cffi_f_aegis128l_encrypt, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 60), (void *)_cffi_d_aegis128l_encrypt },
-  { "aegis128l_encrypt_detached", (void *)_cffi_f_aegis128l_encrypt_detached, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 70), (void *)_cffi_d_aegis128l_encrypt_detached },
-  { "aegis128l_keybytes", (void *)_cffi_f_aegis128l_keybytes, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 108), (void *)_cffi_d_aegis128l_keybytes },
+  { "aegis128l_abytes_max", (void *)_cffi_f_aegis128l_abytes_max, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 204), (void *)_cffi_d_aegis128l_abytes_max },
+  { "aegis128l_abytes_min", (void *)_cffi_f_aegis128l_abytes_min, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 204), (void *)_cffi_d_aegis128l_abytes_min },
+  { "aegis128l_decrypt", (void *)_cffi_f_aegis128l_decrypt, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 177), (void *)_cffi_d_aegis128l_decrypt },
+  { "aegis128l_decrypt_detached", (void *)_cffi_f_aegis128l_decrypt_detached, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 187), (void *)_cffi_d_aegis128l_decrypt_detached },
+  { "aegis128l_encrypt", (void *)_cffi_f_aegis128l_encrypt, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 156), (void *)_cffi_d_aegis128l_encrypt },
+  { "aegis128l_encrypt_detached", (void *)_cffi_f_aegis128l_encrypt_detached, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 166), (void *)_cffi_d_aegis128l_encrypt_detached },
+  { "aegis128l_keybytes", (void *)_cffi_f_aegis128l_keybytes, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 204), (void *)_cffi_d_aegis128l_keybytes },
   { "aegis128l_mac_final", (void *)_cffi_f_aegis128l_mac_final, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 0), (void *)_cffi_d_aegis128l_mac_final },
-  { "aegis128l_mac_init", (void *)_cffi_f_aegis128l_mac_init, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 113), (void *)_cffi_d_aegis128l_mac_init },
-  { "aegis128l_mac_reset", (void *)_cffi_f_aegis128l_mac_reset, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 110), (void *)_cffi_d_aegis128l_mac_reset },
+  { "aegis128l_mac_init", (void *)_cffi_f_aegis128l_mac_init, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 209), (void *)_cffi_d_aegis128l_mac_init },
+  { "aegis128l_mac_reset", (void *)_cffi_f_aegis128l_mac_reset, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 206), (void *)_cffi_d_aegis128l_mac_reset },
   { "aegis128l_mac_update", (void *)_cffi_f_aegis128l_mac_update, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 5), (void *)_cffi_d_aegis128l_mac_update },
   { "aegis128l_mac_verify", (void *)_cffi_f_aegis128l_mac_verify, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 5), (void *)_cffi_d_aegis128l_mac_verify },
-  { "aegis128l_npubbytes", (void *)_cffi_f_aegis128l_npubbytes, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 108), (void *)_cffi_d_aegis128l_npubbytes },
-  { "aegis128l_stream", (void *)_cffi_f_aegis128l_stream, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 158), (void *)_cffi_d_aegis128l_stream },
-  { "aegis128l_tailbytes_max", (void *)_cffi_f_aegis128l_tailbytes_max, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 108), (void *)_cffi_d_aegis128l_tailbytes_max },
-  { "aegis128x2_abytes_max", (void *)_cffi_f_aegis128x2_abytes_max, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 108), (void *)_cffi_d_aegis128x2_abytes_max },
-  { "aegis128x2_abytes_min", (void *)_cffi_f_aegis128x2_abytes_min, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 108), (void *)_cffi_d_aegis128x2_abytes_min },
-  { "aegis128x2_decrypt_detached", (void *)_cffi_f_aegis128x2_decrypt_detached, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 91), (void *)_cffi_d_aegis128x2_decrypt_detached },
-  { "aegis128x2_encrypt_detached", (void *)_cffi_f_aegis128x2_encrypt_detached, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 70), (void *)_cffi_d_aegis128x2_encrypt_detached },
-  { "aegis128x2_keybytes", (void *)_cffi_f_aegis128x2_keybytes, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 108), (void *)_cffi_d_aegis128x2_keybytes },
-  { "aegis128x2_mac_final", (void *)_cffi_f_aegis128x2_mac_final, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 10), (void *)_cffi_d_aegis128x2_mac_final },
-  { "aegis128x2_mac_init", (void *)_cffi_f_aegis128x2_mac_init, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 121), (void *)_cffi_d_aegis128x2_mac_init },
-  { "aegis128x2_mac_reset", (void *)_cffi_f_aegis128x2_mac_reset, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 118), (void *)_cffi_d_aegis128x2_mac_reset },
-  { "aegis128x2_mac_update", (void *)_cffi_f_aegis128x2_mac_update, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 15), (void *)_cffi_d_aegis128x2_mac_update },
-  { "aegis128x2_mac_verify", (void *)_cffi_f_aegis128x2_mac_verify, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 15), (void *)_cffi_d_aegis128x2_mac_verify },
-  { "aegis128x2_npubbytes", (void *)_cffi_f_aegis128x2_npubbytes, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 108), (void *)_cffi_d_aegis128x2_npubbytes },
-  { "aegis128x4_abytes_max", (void *)_cffi_f_aegis128x4_abytes_max, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 108), (void *)_cffi_d_aegis128x4_abytes_max },
-  { "aegis128x4_abytes_min", (void *)_cffi_f_aegis128x4_abytes_min, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 108), (void *)_cffi_d_aegis128x4_abytes_min },
-  { "aegis128x4_decrypt_detached", (void *)_cffi_f_aegis128x4_decrypt_detached, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 91), (void *)_cffi_d_aegis128x4_decrypt_detached },
-  { "aegis128x4_encrypt_detached", (void *)_cffi_f_aegis128x4_encrypt_detached, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 70), (void *)_cffi_d_aegis128x4_encrypt_detached },
-  { "aegis128x4_keybytes", (void *)_cffi_f_aegis128x4_keybytes, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 108), (void *)_cffi_d_aegis128x4_keybytes },
-  { "aegis128x4_mac_final", (void *)_cffi_f_aegis128x4_mac_final, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 20), (void *)_cffi_d_aegis128x4_mac_final },
-  { "aegis128x4_mac_init", (void *)_cffi_f_aegis128x4_mac_init, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 129), (void *)_cffi_d_aegis128x4_mac_init },
-  { "aegis128x4_mac_reset", (void *)_cffi_f_aegis128x4_mac_reset, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 126), (void *)_cffi_d_aegis128x4_mac_reset },
-  { "aegis128x4_mac_update", (void *)_cffi_f_aegis128x4_mac_update, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 25), (void *)_cffi_d_aegis128x4_mac_update },
-  { "aegis128x4_mac_verify", (void *)_cffi_f_aegis128x4_mac_verify, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 25), (void *)_cffi_d_aegis128x4_mac_verify },
-  { "aegis128x4_npubbytes", (void *)_cffi_f_aegis128x4_npubbytes, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 108), (void *)_cffi_d_aegis128x4_npubbytes },
-  { "aegis256_abytes_max", (void *)_cffi_f_aegis256_abytes_max, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 108), (void *)_cffi_d_aegis256_abytes_max },
-  { "aegis256_abytes_min", (void *)_cffi_f_aegis256_abytes_min, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 108), (void *)_cffi_d_aegis256_abytes_min },
-  { "aegis256_decrypt", (void *)_cffi_f_aegis256_decrypt, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 81), (void *)_cffi_d_aegis256_decrypt },
-  { "aegis256_decrypt_detached", (void *)_cffi_f_aegis256_decrypt_detached, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 91), (void *)_cffi_d_aegis256_decrypt_detached },
-  { "aegis256_encrypt", (void *)_cffi_f_aegis256_encrypt, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 60), (void *)_cffi_d_aegis256_encrypt },
-  { "aegis256_encrypt_detached", (void *)_cffi_f_aegis256_encrypt_detached, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 70), (void *)_cffi_d_aegis256_encrypt_detached },
-  { "aegis256_keybytes", (void *)_cffi_f_aegis256_keybytes, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 108), (void *)_cffi_d_aegis256_keybytes },
-  { "aegis256_mac_final", (void *)_cffi_f_aegis256_mac_final, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 30), (void *)_cffi_d_aegis256_mac_final },
-  { "aegis256_mac_init", (void *)_cffi_f_aegis256_mac_init, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 137), (void *)_cffi_d_aegis256_mac_init },
-  { "aegis256_mac_reset", (void *)_cffi_f_aegis256_mac_reset, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 134), (void *)_cffi_d_aegis256_mac_reset },
-  { "aegis256_mac_update", (void *)_cffi_f_aegis256_mac_update, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 35), (void *)_cffi_d_aegis256_mac_update },
-  { "aegis256_mac_verify", (void *)_cffi_f_aegis256_mac_verify, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 35), (void *)_cffi_d_aegis256_mac_verify },
-  { "aegis256_npubbytes", (void *)_cffi_f_aegis256_npubbytes, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 108), (void *)_cffi_d_aegis256_npubbytes },
-  { "aegis256_stream", (void *)_cffi_f_aegis256_stream, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 158), (void *)_cffi_d_aegis256_stream },
-  { "aegis256_tailbytes_max", (void *)_cffi_f_aegis256_tailbytes_max, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 108), (void *)_cffi_d_aegis256_tailbytes_max },
-  { "aegis256x2_abytes_max", (void *)_cffi_f_aegis256x2_abytes_max, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 108), (void *)_cffi_d_aegis256x2_abytes_max },
-  { "aegis256x2_abytes_min", (void *)_cffi_f_aegis256x2_abytes_min, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 108), (void *)_cffi_d_aegis256x2_abytes_min },
-  { "aegis256x2_decrypt_detached", (void *)_cffi_f_aegis256x2_decrypt_detached, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 91), (void *)_cffi_d_aegis256x2_decrypt_detached },
-  { "aegis256x2_encrypt_detached", (void *)_cffi_f_aegis256x2_encrypt_detached, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 70), (void *)_cffi_d_aegis256x2_encrypt_detached },
-  { "aegis256x2_keybytes", (void *)_cffi_f_aegis256x2_keybytes, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 108), (void *)_cffi_d_aegis256x2_keybytes },
-  { "aegis256x2_mac_final", (void *)_cffi_f_aegis256x2_mac_final, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 40), (void *)_cffi_d_aegis256x2_mac_final },
-  { "aegis256x2_mac_init", (void *)_cffi_f_aegis256x2_mac_init, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 145), (void *)_cffi_d_aegis256x2_mac_init },
-  { "aegis256x2_mac_reset", (void *)_cffi_f_aegis256x2_mac_reset, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 142), (void *)_cffi_d_aegis256x2_mac_reset },
-  { "aegis256x2_mac_update", (void *)_cffi_f_aegis256x2_mac_update, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 45), (void *)_cffi_d_aegis256x2_mac_update },
-  { "aegis256x2_mac_verify", (void *)_cffi_f_aegis256x2_mac_verify, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 45), (void *)_cffi_d_aegis256x2_mac_verify },
-  { "aegis256x2_npubbytes", (void *)_cffi_f_aegis256x2_npubbytes, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 108), (void *)_cffi_d_aegis256x2_npubbytes },
-  { "aegis256x4_abytes_max", (void *)_cffi_f_aegis256x4_abytes_max, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 108), (void *)_cffi_d_aegis256x4_abytes_max },
-  { "aegis256x4_abytes_min", (void *)_cffi_f_aegis256x4_abytes_min, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 108), (void *)_cffi_d_aegis256x4_abytes_min },
-  { "aegis256x4_decrypt_detached", (void *)_cffi_f_aegis256x4_decrypt_detached, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 91), (void *)_cffi_d_aegis256x4_decrypt_detached },
-  { "aegis256x4_encrypt_detached", (void *)_cffi_f_aegis256x4_encrypt_detached, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 70), (void *)_cffi_d_aegis256x4_encrypt_detached },
-  { "aegis256x4_keybytes", (void *)_cffi_f_aegis256x4_keybytes, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 108), (void *)_cffi_d_aegis256x4_keybytes },
-  { "aegis256x4_mac_final", (void *)_cffi_f_aegis256x4_mac_final, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 50), (void *)_cffi_d_aegis256x4_mac_final },
-  { "aegis256x4_mac_init", (void *)_cffi_f_aegis256x4_mac_init, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 153), (void *)_cffi_d_aegis256x4_mac_init },
-  { "aegis256x4_mac_reset", (void *)_cffi_f_aegis256x4_mac_reset, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 150), (void *)_cffi_d_aegis256x4_mac_reset },
-  { "aegis256x4_mac_update", (void *)_cffi_f_aegis256x4_mac_update, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 55), (void *)_cffi_d_aegis256x4_mac_update },
-  { "aegis256x4_mac_verify", (void *)_cffi_f_aegis256x4_mac_verify, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 55), (void *)_cffi_d_aegis256x4_mac_verify },
-  { "aegis256x4_npubbytes", (void *)_cffi_f_aegis256x4_npubbytes, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 108), (void *)_cffi_d_aegis256x4_npubbytes },
-  { "aegis_init", (void *)_cffi_f_aegis_init, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 106), (void *)_cffi_d_aegis_init },
-  { "aegis_verify_16", (void *)_cffi_f_aegis_verify_16, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 102), (void *)_cffi_d_aegis_verify_16 },
-  { "aegis_verify_32", (void *)_cffi_f_aegis_verify_32, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 102), (void *)_cffi_d_aegis_verify_32 },
+  { "aegis128l_npubbytes", (void *)_cffi_f_aegis128l_npubbytes, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 204), (void *)_cffi_d_aegis128l_npubbytes },
+  { "aegis128l_state_decrypt_detached_final", (void *)_cffi_f_aegis128l_state_decrypt_detached_final, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 18), (void *)_cffi_d_aegis128l_state_decrypt_detached_final },
+  { "aegis128l_state_decrypt_detached_update", (void *)_cffi_f_aegis128l_state_decrypt_detached_update, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 18), (void *)_cffi_d_aegis128l_state_decrypt_detached_update },
+  { "aegis128l_state_encrypt_detached_final", (void *)_cffi_f_aegis128l_state_encrypt_detached_final, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 10), (void *)_cffi_d_aegis128l_state_encrypt_detached_final },
+  { "aegis128l_state_encrypt_update", (void *)_cffi_f_aegis128l_state_encrypt_update, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 18), (void *)_cffi_d_aegis128l_state_encrypt_update },
+  { "aegis128l_state_init", (void *)_cffi_f_aegis128l_state_init, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 214), (void *)_cffi_d_aegis128l_state_init },
+  { "aegis128l_stream", (void *)_cffi_f_aegis128l_stream, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 296), (void *)_cffi_d_aegis128l_stream },
+  { "aegis128l_tailbytes_max", (void *)_cffi_f_aegis128l_tailbytes_max, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 204), (void *)_cffi_d_aegis128l_tailbytes_max },
+  { "aegis128x2_abytes_max", (void *)_cffi_f_aegis128x2_abytes_max, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 204), (void *)_cffi_d_aegis128x2_abytes_max },
+  { "aegis128x2_abytes_min", (void *)_cffi_f_aegis128x2_abytes_min, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 204), (void *)_cffi_d_aegis128x2_abytes_min },
+  { "aegis128x2_decrypt_detached", (void *)_cffi_f_aegis128x2_decrypt_detached, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 187), (void *)_cffi_d_aegis128x2_decrypt_detached },
+  { "aegis128x2_encrypt_detached", (void *)_cffi_f_aegis128x2_encrypt_detached, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 166), (void *)_cffi_d_aegis128x2_encrypt_detached },
+  { "aegis128x2_keybytes", (void *)_cffi_f_aegis128x2_keybytes, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 204), (void *)_cffi_d_aegis128x2_keybytes },
+  { "aegis128x2_mac_final", (void *)_cffi_f_aegis128x2_mac_final, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 26), (void *)_cffi_d_aegis128x2_mac_final },
+  { "aegis128x2_mac_init", (void *)_cffi_f_aegis128x2_mac_init, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 224), (void *)_cffi_d_aegis128x2_mac_init },
+  { "aegis128x2_mac_reset", (void *)_cffi_f_aegis128x2_mac_reset, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 221), (void *)_cffi_d_aegis128x2_mac_reset },
+  { "aegis128x2_mac_update", (void *)_cffi_f_aegis128x2_mac_update, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 31), (void *)_cffi_d_aegis128x2_mac_update },
+  { "aegis128x2_mac_verify", (void *)_cffi_f_aegis128x2_mac_verify, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 31), (void *)_cffi_d_aegis128x2_mac_verify },
+  { "aegis128x2_npubbytes", (void *)_cffi_f_aegis128x2_npubbytes, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 204), (void *)_cffi_d_aegis128x2_npubbytes },
+  { "aegis128x2_state_decrypt_detached_final", (void *)_cffi_f_aegis128x2_state_decrypt_detached_final, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 44), (void *)_cffi_d_aegis128x2_state_decrypt_detached_final },
+  { "aegis128x2_state_decrypt_detached_update", (void *)_cffi_f_aegis128x2_state_decrypt_detached_update, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 44), (void *)_cffi_d_aegis128x2_state_decrypt_detached_update },
+  { "aegis128x2_state_encrypt_detached_final", (void *)_cffi_f_aegis128x2_state_encrypt_detached_final, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 36), (void *)_cffi_d_aegis128x2_state_encrypt_detached_final },
+  { "aegis128x2_state_encrypt_update", (void *)_cffi_f_aegis128x2_state_encrypt_update, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 44), (void *)_cffi_d_aegis128x2_state_encrypt_update },
+  { "aegis128x2_state_init", (void *)_cffi_f_aegis128x2_state_init, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 229), (void *)_cffi_d_aegis128x2_state_init },
+  { "aegis128x4_abytes_max", (void *)_cffi_f_aegis128x4_abytes_max, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 204), (void *)_cffi_d_aegis128x4_abytes_max },
+  { "aegis128x4_abytes_min", (void *)_cffi_f_aegis128x4_abytes_min, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 204), (void *)_cffi_d_aegis128x4_abytes_min },
+  { "aegis128x4_decrypt_detached", (void *)_cffi_f_aegis128x4_decrypt_detached, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 187), (void *)_cffi_d_aegis128x4_decrypt_detached },
+  { "aegis128x4_encrypt_detached", (void *)_cffi_f_aegis128x4_encrypt_detached, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 166), (void *)_cffi_d_aegis128x4_encrypt_detached },
+  { "aegis128x4_keybytes", (void *)_cffi_f_aegis128x4_keybytes, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 204), (void *)_cffi_d_aegis128x4_keybytes },
+  { "aegis128x4_mac_final", (void *)_cffi_f_aegis128x4_mac_final, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 52), (void *)_cffi_d_aegis128x4_mac_final },
+  { "aegis128x4_mac_init", (void *)_cffi_f_aegis128x4_mac_init, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 239), (void *)_cffi_d_aegis128x4_mac_init },
+  { "aegis128x4_mac_reset", (void *)_cffi_f_aegis128x4_mac_reset, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 236), (void *)_cffi_d_aegis128x4_mac_reset },
+  { "aegis128x4_mac_update", (void *)_cffi_f_aegis128x4_mac_update, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 57), (void *)_cffi_d_aegis128x4_mac_update },
+  { "aegis128x4_mac_verify", (void *)_cffi_f_aegis128x4_mac_verify, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 57), (void *)_cffi_d_aegis128x4_mac_verify },
+  { "aegis128x4_npubbytes", (void *)_cffi_f_aegis128x4_npubbytes, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 204), (void *)_cffi_d_aegis128x4_npubbytes },
+  { "aegis128x4_state_decrypt_detached_final", (void *)_cffi_f_aegis128x4_state_decrypt_detached_final, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 70), (void *)_cffi_d_aegis128x4_state_decrypt_detached_final },
+  { "aegis128x4_state_decrypt_detached_update", (void *)_cffi_f_aegis128x4_state_decrypt_detached_update, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 70), (void *)_cffi_d_aegis128x4_state_decrypt_detached_update },
+  { "aegis128x4_state_encrypt_detached_final", (void *)_cffi_f_aegis128x4_state_encrypt_detached_final, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 62), (void *)_cffi_d_aegis128x4_state_encrypt_detached_final },
+  { "aegis128x4_state_encrypt_update", (void *)_cffi_f_aegis128x4_state_encrypt_update, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 70), (void *)_cffi_d_aegis128x4_state_encrypt_update },
+  { "aegis128x4_state_init", (void *)_cffi_f_aegis128x4_state_init, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 244), (void *)_cffi_d_aegis128x4_state_init },
+  { "aegis256_abytes_max", (void *)_cffi_f_aegis256_abytes_max, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 204), (void *)_cffi_d_aegis256_abytes_max },
+  { "aegis256_abytes_min", (void *)_cffi_f_aegis256_abytes_min, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 204), (void *)_cffi_d_aegis256_abytes_min },
+  { "aegis256_decrypt", (void *)_cffi_f_aegis256_decrypt, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 177), (void *)_cffi_d_aegis256_decrypt },
+  { "aegis256_decrypt_detached", (void *)_cffi_f_aegis256_decrypt_detached, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 187), (void *)_cffi_d_aegis256_decrypt_detached },
+  { "aegis256_encrypt", (void *)_cffi_f_aegis256_encrypt, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 156), (void *)_cffi_d_aegis256_encrypt },
+  { "aegis256_encrypt_detached", (void *)_cffi_f_aegis256_encrypt_detached, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 166), (void *)_cffi_d_aegis256_encrypt_detached },
+  { "aegis256_keybytes", (void *)_cffi_f_aegis256_keybytes, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 204), (void *)_cffi_d_aegis256_keybytes },
+  { "aegis256_mac_final", (void *)_cffi_f_aegis256_mac_final, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 78), (void *)_cffi_d_aegis256_mac_final },
+  { "aegis256_mac_init", (void *)_cffi_f_aegis256_mac_init, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 254), (void *)_cffi_d_aegis256_mac_init },
+  { "aegis256_mac_reset", (void *)_cffi_f_aegis256_mac_reset, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 251), (void *)_cffi_d_aegis256_mac_reset },
+  { "aegis256_mac_update", (void *)_cffi_f_aegis256_mac_update, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 83), (void *)_cffi_d_aegis256_mac_update },
+  { "aegis256_mac_verify", (void *)_cffi_f_aegis256_mac_verify, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 83), (void *)_cffi_d_aegis256_mac_verify },
+  { "aegis256_npubbytes", (void *)_cffi_f_aegis256_npubbytes, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 204), (void *)_cffi_d_aegis256_npubbytes },
+  { "aegis256_state_decrypt_detached_final", (void *)_cffi_f_aegis256_state_decrypt_detached_final, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 96), (void *)_cffi_d_aegis256_state_decrypt_detached_final },
+  { "aegis256_state_decrypt_detached_update", (void *)_cffi_f_aegis256_state_decrypt_detached_update, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 96), (void *)_cffi_d_aegis256_state_decrypt_detached_update },
+  { "aegis256_state_encrypt_detached_final", (void *)_cffi_f_aegis256_state_encrypt_detached_final, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 88), (void *)_cffi_d_aegis256_state_encrypt_detached_final },
+  { "aegis256_state_encrypt_update", (void *)_cffi_f_aegis256_state_encrypt_update, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 96), (void *)_cffi_d_aegis256_state_encrypt_update },
+  { "aegis256_state_init", (void *)_cffi_f_aegis256_state_init, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 259), (void *)_cffi_d_aegis256_state_init },
+  { "aegis256_stream", (void *)_cffi_f_aegis256_stream, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 296), (void *)_cffi_d_aegis256_stream },
+  { "aegis256_tailbytes_max", (void *)_cffi_f_aegis256_tailbytes_max, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 204), (void *)_cffi_d_aegis256_tailbytes_max },
+  { "aegis256x2_abytes_max", (void *)_cffi_f_aegis256x2_abytes_max, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 204), (void *)_cffi_d_aegis256x2_abytes_max },
+  { "aegis256x2_abytes_min", (void *)_cffi_f_aegis256x2_abytes_min, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 204), (void *)_cffi_d_aegis256x2_abytes_min },
+  { "aegis256x2_decrypt_detached", (void *)_cffi_f_aegis256x2_decrypt_detached, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 187), (void *)_cffi_d_aegis256x2_decrypt_detached },
+  { "aegis256x2_encrypt_detached", (void *)_cffi_f_aegis256x2_encrypt_detached, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 166), (void *)_cffi_d_aegis256x2_encrypt_detached },
+  { "aegis256x2_keybytes", (void *)_cffi_f_aegis256x2_keybytes, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 204), (void *)_cffi_d_aegis256x2_keybytes },
+  { "aegis256x2_mac_final", (void *)_cffi_f_aegis256x2_mac_final, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 104), (void *)_cffi_d_aegis256x2_mac_final },
+  { "aegis256x2_mac_init", (void *)_cffi_f_aegis256x2_mac_init, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 269), (void *)_cffi_d_aegis256x2_mac_init },
+  { "aegis256x2_mac_reset", (void *)_cffi_f_aegis256x2_mac_reset, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 266), (void *)_cffi_d_aegis256x2_mac_reset },
+  { "aegis256x2_mac_update", (void *)_cffi_f_aegis256x2_mac_update, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 109), (void *)_cffi_d_aegis256x2_mac_update },
+  { "aegis256x2_mac_verify", (void *)_cffi_f_aegis256x2_mac_verify, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 109), (void *)_cffi_d_aegis256x2_mac_verify },
+  { "aegis256x2_npubbytes", (void *)_cffi_f_aegis256x2_npubbytes, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 204), (void *)_cffi_d_aegis256x2_npubbytes },
+  { "aegis256x2_state_decrypt_detached_final", (void *)_cffi_f_aegis256x2_state_decrypt_detached_final, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 122), (void *)_cffi_d_aegis256x2_state_decrypt_detached_final },
+  { "aegis256x2_state_decrypt_detached_update", (void *)_cffi_f_aegis256x2_state_decrypt_detached_update, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 122), (void *)_cffi_d_aegis256x2_state_decrypt_detached_update },
+  { "aegis256x2_state_encrypt_detached_final", (void *)_cffi_f_aegis256x2_state_encrypt_detached_final, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 114), (void *)_cffi_d_aegis256x2_state_encrypt_detached_final },
+  { "aegis256x2_state_encrypt_update", (void *)_cffi_f_aegis256x2_state_encrypt_update, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 122), (void *)_cffi_d_aegis256x2_state_encrypt_update },
+  { "aegis256x2_state_init", (void *)_cffi_f_aegis256x2_state_init, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 274), (void *)_cffi_d_aegis256x2_state_init },
+  { "aegis256x4_abytes_max", (void *)_cffi_f_aegis256x4_abytes_max, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 204), (void *)_cffi_d_aegis256x4_abytes_max },
+  { "aegis256x4_abytes_min", (void *)_cffi_f_aegis256x4_abytes_min, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 204), (void *)_cffi_d_aegis256x4_abytes_min },
+  { "aegis256x4_decrypt_detached", (void *)_cffi_f_aegis256x4_decrypt_detached, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 187), (void *)_cffi_d_aegis256x4_decrypt_detached },
+  { "aegis256x4_encrypt_detached", (void *)_cffi_f_aegis256x4_encrypt_detached, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 166), (void *)_cffi_d_aegis256x4_encrypt_detached },
+  { "aegis256x4_keybytes", (void *)_cffi_f_aegis256x4_keybytes, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 204), (void *)_cffi_d_aegis256x4_keybytes },
+  { "aegis256x4_mac_final", (void *)_cffi_f_aegis256x4_mac_final, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 130), (void *)_cffi_d_aegis256x4_mac_final },
+  { "aegis256x4_mac_init", (void *)_cffi_f_aegis256x4_mac_init, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 284), (void *)_cffi_d_aegis256x4_mac_init },
+  { "aegis256x4_mac_reset", (void *)_cffi_f_aegis256x4_mac_reset, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 281), (void *)_cffi_d_aegis256x4_mac_reset },
+  { "aegis256x4_mac_update", (void *)_cffi_f_aegis256x4_mac_update, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 135), (void *)_cffi_d_aegis256x4_mac_update },
+  { "aegis256x4_mac_verify", (void *)_cffi_f_aegis256x4_mac_verify, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 135), (void *)_cffi_d_aegis256x4_mac_verify },
+  { "aegis256x4_npubbytes", (void *)_cffi_f_aegis256x4_npubbytes, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 204), (void *)_cffi_d_aegis256x4_npubbytes },
+  { "aegis256x4_state_decrypt_detached_final", (void *)_cffi_f_aegis256x4_state_decrypt_detached_final, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 148), (void *)_cffi_d_aegis256x4_state_decrypt_detached_final },
+  { "aegis256x4_state_decrypt_detached_update", (void *)_cffi_f_aegis256x4_state_decrypt_detached_update, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 148), (void *)_cffi_d_aegis256x4_state_decrypt_detached_update },
+  { "aegis256x4_state_encrypt_detached_final", (void *)_cffi_f_aegis256x4_state_encrypt_detached_final, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 140), (void *)_cffi_d_aegis256x4_state_encrypt_detached_final },
+  { "aegis256x4_state_encrypt_update", (void *)_cffi_f_aegis256x4_state_encrypt_update, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 148), (void *)_cffi_d_aegis256x4_state_encrypt_update },
+  { "aegis256x4_state_init", (void *)_cffi_f_aegis256x4_state_init, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 289), (void *)_cffi_d_aegis256x4_state_init },
+  { "aegis_init", (void *)_cffi_f_aegis_init, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 202), (void *)_cffi_d_aegis_init },
+  { "aegis_verify_16", (void *)_cffi_f_aegis_verify_16, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 198), (void *)_cffi_d_aegis_verify_16 },
+  { "aegis_verify_32", (void *)_cffi_f_aegis_verify_32, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 198), (void *)_cffi_d_aegis_verify_32 },
 };
 
 static const struct _cffi_field_s _cffi_fields[] = {
   { "opaque", offsetof(aegis128l_mac_state, opaque),
               sizeof(((aegis128l_mac_state *)0)->opaque),
-              _CFFI_OP(_CFFI_OP_NOOP, 176) },
+              _CFFI_OP(_CFFI_OP_NOOP, 326) },
+  { "opaque", offsetof(aegis128l_state, opaque),
+              sizeof(((aegis128l_state *)0)->opaque),
+              _CFFI_OP(_CFFI_OP_NOOP, 320) },
   { "opaque", offsetof(aegis128x2_mac_state, opaque),
               sizeof(((aegis128x2_mac_state *)0)->opaque),
-              _CFFI_OP(_CFFI_OP_NOOP, 180) },
+              _CFFI_OP(_CFFI_OP_NOOP, 334) },
+  { "opaque", offsetof(aegis128x2_state, opaque),
+              sizeof(((aegis128x2_state *)0)->opaque),
+              _CFFI_OP(_CFFI_OP_NOOP, 328) },
   { "opaque", offsetof(aegis128x4_mac_state, opaque),
               sizeof(((aegis128x4_mac_state *)0)->opaque),
-              _CFFI_OP(_CFFI_OP_NOOP, 172) },
+              _CFFI_OP(_CFFI_OP_NOOP, 316) },
+  { "opaque", offsetof(aegis128x4_state, opaque),
+              sizeof(((aegis128x4_state *)0)->opaque),
+              _CFFI_OP(_CFFI_OP_NOOP, 336) },
   { "opaque", offsetof(aegis256_mac_state, opaque),
               sizeof(((aegis256_mac_state *)0)->opaque),
-              _CFFI_OP(_CFFI_OP_NOOP, 174) },
+              _CFFI_OP(_CFFI_OP_NOOP, 322) },
+  { "opaque", offsetof(aegis256_state, opaque),
+              sizeof(((aegis256_state *)0)->opaque),
+              _CFFI_OP(_CFFI_OP_NOOP, 318) },
   { "opaque", offsetof(aegis256x2_mac_state, opaque),
               sizeof(((aegis256x2_mac_state *)0)->opaque),
-              _CFFI_OP(_CFFI_OP_NOOP, 178) },
+              _CFFI_OP(_CFFI_OP_NOOP, 330) },
+  { "opaque", offsetof(aegis256x2_state, opaque),
+              sizeof(((aegis256x2_state *)0)->opaque),
+              _CFFI_OP(_CFFI_OP_NOOP, 324) },
   { "opaque", offsetof(aegis256x4_mac_state, opaque),
               sizeof(((aegis256x4_mac_state *)0)->opaque),
-              _CFFI_OP(_CFFI_OP_NOOP, 182) },
+              _CFFI_OP(_CFFI_OP_NOOP, 338) },
+  { "opaque", offsetof(aegis256x4_state, opaque),
+              sizeof(((aegis256x4_state *)0)->opaque),
+              _CFFI_OP(_CFFI_OP_NOOP, 332) },
 };
 
 static const struct _cffi_struct_union_s _cffi_struct_unions[] = {
-  { "$aegis128l_mac_state", 164, 0,
+  { "$aegis128l_mac_state", 302, 0,
     sizeof(aegis128l_mac_state), offsetof(struct _cffi_align_typedef_aegis128l_mac_state, y), 0, 1 },
-  { "$aegis128x2_mac_state", 165, 0,
-    sizeof(aegis128x2_mac_state), offsetof(struct _cffi_align_typedef_aegis128x2_mac_state, y), 1, 1 },
-  { "$aegis128x4_mac_state", 166, 0,
-    sizeof(aegis128x4_mac_state), offsetof(struct _cffi_align_typedef_aegis128x4_mac_state, y), 2, 1 },
-  { "$aegis256_mac_state", 167, 0,
-    sizeof(aegis256_mac_state), offsetof(struct _cffi_align_typedef_aegis256_mac_state, y), 3, 1 },
-  { "$aegis256x2_mac_state", 168, 0,
-    sizeof(aegis256x2_mac_state), offsetof(struct _cffi_align_typedef_aegis256x2_mac_state, y), 4, 1 },
-  { "$aegis256x4_mac_state", 169, 0,
-    sizeof(aegis256x4_mac_state), offsetof(struct _cffi_align_typedef_aegis256x4_mac_state, y), 5, 1 },
+  { "$aegis128l_state", 303, 0,
+    sizeof(aegis128l_state), offsetof(struct _cffi_align_typedef_aegis128l_state, y), 1, 1 },
+  { "$aegis128x2_mac_state", 304, 0,
+    sizeof(aegis128x2_mac_state), offsetof(struct _cffi_align_typedef_aegis128x2_mac_state, y), 2, 1 },
+  { "$aegis128x2_state", 305, 0,
+    sizeof(aegis128x2_state), offsetof(struct _cffi_align_typedef_aegis128x2_state, y), 3, 1 },
+  { "$aegis128x4_mac_state", 306, 0,
+    sizeof(aegis128x4_mac_state), offsetof(struct _cffi_align_typedef_aegis128x4_mac_state, y), 4, 1 },
+  { "$aegis128x4_state", 307, 0,
+    sizeof(aegis128x4_state), offsetof(struct _cffi_align_typedef_aegis128x4_state, y), 5, 1 },
+  { "$aegis256_mac_state", 308, 0,
+    sizeof(aegis256_mac_state), offsetof(struct _cffi_align_typedef_aegis256_mac_state, y), 6, 1 },
+  { "$aegis256_state", 309, 0,
+    sizeof(aegis256_state), offsetof(struct _cffi_align_typedef_aegis256_state, y), 7, 1 },
+  { "$aegis256x2_mac_state", 310, 0,
+    sizeof(aegis256x2_mac_state), offsetof(struct _cffi_align_typedef_aegis256x2_mac_state, y), 8, 1 },
+  { "$aegis256x2_state", 311, 0,
+    sizeof(aegis256x2_state), offsetof(struct _cffi_align_typedef_aegis256x2_state, y), 9, 1 },
+  { "$aegis256x4_mac_state", 312, 0,
+    sizeof(aegis256x4_mac_state), offsetof(struct _cffi_align_typedef_aegis256x4_mac_state, y), 10, 1 },
+  { "$aegis256x4_state", 313, 0,
+    sizeof(aegis256x4_state), offsetof(struct _cffi_align_typedef_aegis256x4_state, y), 11, 1 },
 };
 
 static const struct _cffi_typename_s _cffi_typenames[] = {
-  { "aegis128l_mac_state", 164 },
-  { "aegis128x2_mac_state", 165 },
-  { "aegis128x4_mac_state", 166 },
-  { "aegis256_mac_state", 167 },
-  { "aegis256x2_mac_state", 168 },
-  { "aegis256x4_mac_state", 169 },
+  { "aegis128l_mac_state", 302 },
+  { "aegis128l_state", 303 },
+  { "aegis128x2_mac_state", 304 },
+  { "aegis128x2_state", 305 },
+  { "aegis128x4_mac_state", 306 },
+  { "aegis128x4_state", 307 },
+  { "aegis256_mac_state", 308 },
+  { "aegis256_state", 309 },
+  { "aegis256x2_mac_state", 310 },
+  { "aegis256x2_state", 311 },
+  { "aegis256x4_mac_state", 312 },
+  { "aegis256x4_state", 313 },
 };
 
 static const struct _cffi_type_context_s _cffi_type_context = {
@@ -5346,12 +8184,12 @@ static const struct _cffi_type_context_s _cffi_type_context = {
   _cffi_struct_unions,
   NULL,  /* no enums */
   _cffi_typenames,
-  77,  /* num_globals */
-  6,  /* num_struct_unions */
+  107,  /* num_globals */
+  12,  /* num_struct_unions */
   0,  /* num_enums */
-  6,  /* num_typenames */
+  12,  /* num_typenames */
   NULL,  /* no includes */
-  185,  /* num_types */
+  341,  /* num_types */
   0,  /* flags */
 };
 

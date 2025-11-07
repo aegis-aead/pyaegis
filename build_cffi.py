@@ -55,6 +55,18 @@ def build_ffi():
                               size_t adlen, const uint8_t *npub, const uint8_t *k);
         void aegis128l_stream(uint8_t *out, size_t len, const uint8_t *npub, const uint8_t *k);
 
+        typedef struct { uint8_t opaque[256]; ...; } aegis128l_state;
+        void aegis128l_state_init(aegis128l_state *st_, const uint8_t *ad, size_t adlen,
+                                  const uint8_t *npub, const uint8_t *k);
+        int aegis128l_state_encrypt_update(aegis128l_state *st_, uint8_t *c, size_t clen_max,
+                                           size_t *written, const uint8_t *m, size_t mlen);
+        int aegis128l_state_encrypt_detached_final(aegis128l_state *st_, uint8_t *c, size_t clen_max,
+                                                   size_t *written, uint8_t *mac, size_t maclen);
+        int aegis128l_state_decrypt_detached_update(aegis128l_state *st_, uint8_t *m, size_t mlen_max,
+                                                    size_t *written, const uint8_t *c, size_t clen);
+        int aegis128l_state_decrypt_detached_final(aegis128l_state *st_, uint8_t *m, size_t mlen_max,
+                                                   size_t *written, const uint8_t *mac, size_t maclen);
+
         typedef struct { uint8_t opaque[384]; ...; } aegis128l_mac_state;
         void aegis128l_mac_init(aegis128l_mac_state *st_, const uint8_t *k, const uint8_t *npub);
         int aegis128l_mac_update(aegis128l_mac_state *st_, const uint8_t *m, size_t mlen);
@@ -81,6 +93,18 @@ def build_ffi():
                              size_t adlen, const uint8_t *npub, const uint8_t *k);
         void aegis256_stream(uint8_t *out, size_t len, const uint8_t *npub, const uint8_t *k);
 
+        typedef struct { uint8_t opaque[192]; ...; } aegis256_state;
+        void aegis256_state_init(aegis256_state *st_, const uint8_t *ad, size_t adlen,
+                                const uint8_t *npub, const uint8_t *k);
+        int aegis256_state_encrypt_update(aegis256_state *st_, uint8_t *c, size_t clen_max,
+                                         size_t *written, const uint8_t *m, size_t mlen);
+        int aegis256_state_encrypt_detached_final(aegis256_state *st_, uint8_t *c, size_t clen_max,
+                                                 size_t *written, uint8_t *mac, size_t maclen);
+        int aegis256_state_decrypt_detached_update(aegis256_state *st_, uint8_t *m, size_t mlen_max,
+                                                  size_t *written, const uint8_t *c, size_t clen);
+        int aegis256_state_decrypt_detached_final(aegis256_state *st_, uint8_t *m, size_t mlen_max,
+                                                 size_t *written, const uint8_t *mac, size_t maclen);
+
         typedef struct { uint8_t opaque[288]; ...; } aegis256_mac_state;
         void aegis256_mac_init(aegis256_mac_state *st_, const uint8_t *k, const uint8_t *npub);
         int aegis256_mac_update(aegis256_mac_state *st_, const uint8_t *m, size_t mlen);
@@ -100,6 +124,18 @@ def build_ffi():
         int aegis128x2_decrypt_detached(uint8_t *m, const uint8_t *c, size_t clen, const uint8_t *mac,
                                         size_t maclen, const uint8_t *ad, size_t adlen, const uint8_t *npub,
                                         const uint8_t *k);
+
+        typedef struct { uint8_t opaque[448]; ...; } aegis128x2_state;
+        void aegis128x2_state_init(aegis128x2_state *st_, const uint8_t *ad, size_t adlen,
+                                   const uint8_t *npub, const uint8_t *k);
+        int aegis128x2_state_encrypt_update(aegis128x2_state *st_, uint8_t *c, size_t clen_max,
+                                            size_t *written, const uint8_t *m, size_t mlen);
+        int aegis128x2_state_encrypt_detached_final(aegis128x2_state *st_, uint8_t *c, size_t clen_max,
+                                                    size_t *written, uint8_t *mac, size_t maclen);
+        int aegis128x2_state_decrypt_detached_update(aegis128x2_state *st_, uint8_t *m, size_t mlen_max,
+                                                     size_t *written, const uint8_t *c, size_t clen);
+        int aegis128x2_state_decrypt_detached_final(aegis128x2_state *st_, uint8_t *m, size_t mlen_max,
+                                                    size_t *written, const uint8_t *mac, size_t maclen);
 
         typedef struct { uint8_t opaque[704]; ...; } aegis128x2_mac_state;
         void aegis128x2_mac_init(aegis128x2_mac_state *st_, const uint8_t *k, const uint8_t *npub);
@@ -121,6 +157,18 @@ def build_ffi():
                                         size_t maclen, const uint8_t *ad, size_t adlen, const uint8_t *npub,
                                         const uint8_t *k);
 
+        typedef struct { uint8_t opaque[832]; ...; } aegis128x4_state;
+        void aegis128x4_state_init(aegis128x4_state *st_, const uint8_t *ad, size_t adlen,
+                                   const uint8_t *npub, const uint8_t *k);
+        int aegis128x4_state_encrypt_update(aegis128x4_state *st_, uint8_t *c, size_t clen_max,
+                                            size_t *written, const uint8_t *m, size_t mlen);
+        int aegis128x4_state_encrypt_detached_final(aegis128x4_state *st_, uint8_t *c, size_t clen_max,
+                                                    size_t *written, uint8_t *mac, size_t maclen);
+        int aegis128x4_state_decrypt_detached_update(aegis128x4_state *st_, uint8_t *m, size_t mlen_max,
+                                                     size_t *written, const uint8_t *c, size_t clen);
+        int aegis128x4_state_decrypt_detached_final(aegis128x4_state *st_, uint8_t *m, size_t mlen_max,
+                                                    size_t *written, const uint8_t *mac, size_t maclen);
+
         typedef struct { uint8_t opaque[1344]; ...; } aegis128x4_mac_state;
         void aegis128x4_mac_init(aegis128x4_mac_state *st_, const uint8_t *k, const uint8_t *npub);
         int aegis128x4_mac_update(aegis128x4_mac_state *st_, const uint8_t *m, size_t mlen);
@@ -141,6 +189,18 @@ def build_ffi():
                                         size_t maclen, const uint8_t *ad, size_t adlen, const uint8_t *npub,
                                         const uint8_t *k);
 
+        typedef struct { uint8_t opaque[320]; ...; } aegis256x2_state;
+        void aegis256x2_state_init(aegis256x2_state *st_, const uint8_t *ad, size_t adlen,
+                                   const uint8_t *npub, const uint8_t *k);
+        int aegis256x2_state_encrypt_update(aegis256x2_state *st_, uint8_t *c, size_t clen_max,
+                                            size_t *written, const uint8_t *m, size_t mlen);
+        int aegis256x2_state_encrypt_detached_final(aegis256x2_state *st_, uint8_t *c, size_t clen_max,
+                                                    size_t *written, uint8_t *mac, size_t maclen);
+        int aegis256x2_state_decrypt_detached_update(aegis256x2_state *st_, uint8_t *m, size_t mlen_max,
+                                                     size_t *written, const uint8_t *c, size_t clen);
+        int aegis256x2_state_decrypt_detached_final(aegis256x2_state *st_, uint8_t *m, size_t mlen_max,
+                                                    size_t *written, const uint8_t *mac, size_t maclen);
+
         typedef struct { uint8_t opaque[512]; ...; } aegis256x2_mac_state;
         void aegis256x2_mac_init(aegis256x2_mac_state *st_, const uint8_t *k, const uint8_t *npub);
         int aegis256x2_mac_update(aegis256x2_mac_state *st_, const uint8_t *m, size_t mlen);
@@ -160,6 +220,18 @@ def build_ffi():
         int aegis256x4_decrypt_detached(uint8_t *m, const uint8_t *c, size_t clen, const uint8_t *mac,
                                         size_t maclen, const uint8_t *ad, size_t adlen, const uint8_t *npub,
                                         const uint8_t *k);
+
+        typedef struct { uint8_t opaque[576]; ...; } aegis256x4_state;
+        void aegis256x4_state_init(aegis256x4_state *st_, const uint8_t *ad, size_t adlen,
+                                   const uint8_t *npub, const uint8_t *k);
+        int aegis256x4_state_encrypt_update(aegis256x4_state *st_, uint8_t *c, size_t clen_max,
+                                            size_t *written, const uint8_t *m, size_t mlen);
+        int aegis256x4_state_encrypt_detached_final(aegis256x4_state *st_, uint8_t *c, size_t clen_max,
+                                                    size_t *written, uint8_t *mac, size_t maclen);
+        int aegis256x4_state_decrypt_detached_update(aegis256x4_state *st_, uint8_t *m, size_t mlen_max,
+                                                     size_t *written, const uint8_t *c, size_t clen);
+        int aegis256x4_state_decrypt_detached_final(aegis256x4_state *st_, uint8_t *m, size_t mlen_max,
+                                                    size_t *written, const uint8_t *mac, size_t maclen);
 
         typedef struct { uint8_t opaque[960]; ...; } aegis256x4_mac_state;
         void aegis256x4_mac_init(aegis256x4_mac_state *st_, const uint8_t *k, const uint8_t *npub);

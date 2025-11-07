@@ -983,3 +983,568 @@ class AegisMac256X4(_AEGISMACBase):
     _mac_final_func = lib.aegis256x4_mac_final
     _mac_verify_func = lib.aegis256x4_mac_verify
     _mac_reset_func = lib.aegis256x4_mac_reset
+
+
+class _AEGISStreamEncryptBase:
+    """Base class for AEGIS streaming encryption with shared functionality."""
+
+    KEY_SIZE: int
+    NONCE_SIZE: int
+    TAG_SIZE_MIN: int = 16
+    TAG_SIZE_MAX: int = 32
+
+    # Subclasses should define these
+    _state_type = None
+    _state_init_func = None
+    _state_encrypt_update_func = None
+    _state_encrypt_detached_final_func = None
+
+    def __init__(
+        self,
+        key: bytes,
+        nonce: bytes,
+        associated_data: bytes | None = None,
+        tag_size: int = 32,
+    ) -> None:
+        """
+        Initialize a streaming encryption context.
+
+        Args:
+            key: Encryption key (size depends on cipher variant)
+            nonce: Nonce (must be unique for each message with the same key)
+            associated_data: Optional additional authenticated data (not encrypted)
+            tag_size: Size of the authentication tag in bytes (16 or 32).
+                     32 bytes is recommended for maximum security.
+
+        Raises:
+            ValueError: If key, nonce, or tag_size is invalid
+
+        Note:
+            After initialization, call update() with plaintext chunks, then final()
+            to get the authentication tag. The ciphertext is produced incrementally.
+        """
+        if len(key) != self.KEY_SIZE:
+            raise ValueError(f"Key must be {self.KEY_SIZE} bytes, got {len(key)}")
+        if len(nonce) != self.NONCE_SIZE:
+            raise ValueError(f"Nonce must be {self.NONCE_SIZE} bytes, got {len(nonce)}")
+        if tag_size not in (16, 32):
+            raise ValueError(f"tag_size must be 16 or 32, got {tag_size}")
+
+        self.tag_size = tag_size
+        self._state = ffi.new(f"{self._state_type}*")
+
+        ad = associated_data or b""
+        self._state_init_func(self._state, ad, len(ad), nonce, key)
+        self._finalized = False
+
+    @classmethod
+    def random_key(cls) -> bytes:
+        """Generate a random key suitable for this cipher."""
+        return os.urandom(cls.KEY_SIZE)
+
+    @classmethod
+    def random_nonce(cls) -> bytes:
+        """Generate a random nonce suitable for this cipher."""
+        return os.urandom(cls.NONCE_SIZE)
+
+    def update(self, plaintext: bytes) -> bytes:
+        """
+        Encrypt a chunk of plaintext.
+
+        Args:
+            plaintext: Plaintext data to encrypt
+
+        Returns:
+            Ciphertext chunk (same length as plaintext)
+
+        Raises:
+            AegisError: If update fails or encryption has been finalized
+        """
+        if self._finalized:
+            raise AegisError("Cannot update after finalization")
+
+        if not plaintext:
+            return b""
+
+        # Allocate output buffer
+        ciphertext_buf = ffi.new(f"uint8_t[{len(plaintext)}]")
+        written = ffi.new("size_t*")
+
+        result = self._state_encrypt_update_func(
+            self._state, ciphertext_buf, len(plaintext), written, plaintext, len(plaintext)
+        )
+
+        if result != 0:
+            raise AegisError("Encryption update failed")
+
+        return bytes(ffi.buffer(ciphertext_buf, written[0]))
+
+    def final(self) -> bytes:
+        """
+        Finalize the encryption and generate the authentication tag.
+
+        Returns:
+            Authentication tag
+
+        Raises:
+            AegisError: If encryption has already been finalized
+        """
+        if self._finalized:
+            raise AegisError("Encryption already finalized")
+
+        tag_buf = ffi.new(f"uint8_t[{self.tag_size}]")
+        written = ffi.new("size_t*")
+
+        result = self._state_encrypt_detached_final_func(
+            self._state, ffi.NULL, 0, written, tag_buf, self.tag_size
+        )
+
+        if result != 0:
+            raise AegisError("Encryption finalization failed")
+
+        self._finalized = True
+        return bytes(ffi.buffer(tag_buf, self.tag_size))
+
+    def __enter__(self):
+        """Context manager entry."""
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        """Context manager exit - finalize if not already done."""
+        if not self._finalized:
+            self.final()
+        return False
+
+
+class _AEGISStreamDecryptBase:
+    """Base class for AEGIS streaming decryption with shared functionality."""
+
+    KEY_SIZE: int
+    NONCE_SIZE: int
+    TAG_SIZE_MIN: int = 16
+    TAG_SIZE_MAX: int = 32
+
+    # Subclasses should define these
+    _state_type = None
+    _state_init_func = None
+    _state_decrypt_update_func = None
+    _state_decrypt_detached_final_func = None
+
+    def __init__(
+        self,
+        key: bytes,
+        nonce: bytes,
+        associated_data: bytes | None = None,
+        tag_size: int = 32,
+    ) -> None:
+        """
+        Initialize a streaming decryption context.
+
+        Args:
+            key: Decryption key (size depends on cipher variant)
+            nonce: Nonce (must match the one used for encryption)
+            associated_data: Optional additional authenticated data (must match encryption)
+            tag_size: Size of the authentication tag in bytes (16 or 32).
+
+        Raises:
+            ValueError: If key, nonce, or tag_size is invalid
+
+        Note:
+            After initialization, call update() with ciphertext chunks, then verify()
+            with the authentication tag. The plaintext is produced incrementally but
+            MUST NOT be released until the tag has been verified.
+        """
+        if len(key) != self.KEY_SIZE:
+            raise ValueError(f"Key must be {self.KEY_SIZE} bytes, got {len(key)}")
+        if len(nonce) != self.NONCE_SIZE:
+            raise ValueError(f"Nonce must be {self.NONCE_SIZE} bytes, got {len(nonce)}")
+        if tag_size not in (16, 32):
+            raise ValueError(f"tag_size must be 16 or 32, got {tag_size}")
+
+        self.tag_size = tag_size
+        self._state = ffi.new(f"{self._state_type}*")
+
+        ad = associated_data or b""
+        self._state_init_func(self._state, ad, len(ad), nonce, key)
+        self._finalized = False
+        self._plaintext_chunks = []
+
+    @classmethod
+    def random_key(cls) -> bytes:
+        """Generate a random key suitable for this cipher."""
+        return os.urandom(cls.KEY_SIZE)
+
+    @classmethod
+    def random_nonce(cls) -> bytes:
+        """Generate a random nonce suitable for this cipher."""
+        return os.urandom(cls.NONCE_SIZE)
+
+    def update(self, ciphertext: bytes) -> None:
+        """
+        Decrypt a chunk of ciphertext.
+
+        SECURITY WARNING: Do not release the plaintext until verify() succeeds.
+        This implementation buffers the plaintext internally and only releases
+        it after successful verification.
+
+        Args:
+            ciphertext: Ciphertext data to decrypt
+
+        Raises:
+            AegisError: If update fails or decryption has been finalized
+        """
+        if self._finalized:
+            raise AegisError("Cannot update after finalization")
+
+        if not ciphertext:
+            return
+
+        # Allocate output buffer
+        plaintext_buf = ffi.new(f"uint8_t[{len(ciphertext)}]")
+        written = ffi.new("size_t*")
+
+        result = self._state_decrypt_update_func(
+            self._state, plaintext_buf, len(ciphertext), written, ciphertext, len(ciphertext)
+        )
+
+        if result != 0:
+            raise AegisError("Decryption update failed")
+
+        # Buffer the plaintext - don't release it until verification
+        self._plaintext_chunks.append(bytes(ffi.buffer(plaintext_buf, written[0])))
+
+    def verify(self, tag: bytes) -> bytes:
+        """
+        Verify the authentication tag and return all decrypted plaintext.
+
+        Args:
+            tag: Authentication tag to verify
+
+        Returns:
+            Complete plaintext (all chunks concatenated)
+
+        Raises:
+            DecryptionError: If the tag is not authentic
+            AegisError: If decryption has already been finalized
+        """
+        if self._finalized:
+            raise AegisError("Decryption already finalized")
+
+        written = ffi.new("size_t*")
+
+        result = self._state_decrypt_detached_final_func(
+            self._state, ffi.NULL, 0, written, tag, len(tag)
+        )
+
+        self._finalized = True
+
+        if result != 0:
+            # Clear plaintext on verification failure for security
+            self._plaintext_chunks.clear()
+            raise DecryptionError("Tag verification failed")
+
+        # Verification succeeded - return the plaintext
+        plaintext = b"".join(self._plaintext_chunks)
+        self._plaintext_chunks.clear()
+        return plaintext
+
+    def __enter__(self):
+        """Context manager entry."""
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        """Context manager exit - clear buffered plaintext."""
+        self._plaintext_chunks.clear()
+        return False
+
+
+# AEGIS-128L Streaming Classes
+
+
+class AegisStreamEncrypt128L(_AEGISStreamEncryptBase):
+    """
+    AEGIS-128L streaming encryption.
+
+    Uses a 16-byte key and 16-byte nonce.
+    Provides high throughput with 256-bit security.
+
+    Example:
+        >>> key = AegisStreamEncrypt128L.random_key()
+        >>> nonce = AegisStreamEncrypt128L.random_nonce()
+        >>> enc = AegisStreamEncrypt128L(key, nonce, b"metadata")
+        >>> c1 = enc.update(b"hello ")
+        >>> c2 = enc.update(b"world")
+        >>> tag = enc.final()
+
+    Example (with context manager):
+        >>> with AegisStreamEncrypt128L(key, nonce) as enc:
+        ...     ciphertext = enc.update(plaintext)
+        ...     tag = enc.final()
+    """
+
+    KEY_SIZE = 16
+    NONCE_SIZE = 16
+
+    _state_type = "aegis128l_state"
+    _state_init_func = lib.aegis128l_state_init
+    _state_encrypt_update_func = lib.aegis128l_state_encrypt_update
+    _state_encrypt_detached_final_func = lib.aegis128l_state_encrypt_detached_final
+
+
+class AegisStreamDecrypt128L(_AEGISStreamDecryptBase):
+    """
+    AEGIS-128L streaming decryption.
+
+    Uses a 16-byte key and 16-byte nonce.
+
+    Example:
+        >>> dec = AegisStreamDecrypt128L(key, nonce, b"metadata")
+        >>> dec.update(ciphertext1)
+        >>> dec.update(ciphertext2)
+        >>> plaintext = dec.verify(tag)  # raises DecryptionError if invalid
+
+    Example (with context manager):
+        >>> with AegisStreamDecrypt128L(key, nonce) as dec:
+        ...     dec.update(ciphertext)
+        ...     plaintext = dec.verify(tag)
+    """
+
+    KEY_SIZE = 16
+    NONCE_SIZE = 16
+
+    _state_type = "aegis128l_state"
+    _state_init_func = lib.aegis128l_state_init
+    _state_decrypt_update_func = lib.aegis128l_state_decrypt_detached_update
+    _state_decrypt_detached_final_func = lib.aegis128l_state_decrypt_detached_final
+
+
+# AEGIS-256 Streaming Classes
+
+
+class AegisStreamEncrypt256(_AEGISStreamEncryptBase):
+    """
+    AEGIS-256 streaming encryption.
+
+    Uses a 32-byte key and 32-byte nonce.
+    Provides maximum security with 256-bit key.
+
+    Example:
+        >>> key = AegisStreamEncrypt256.random_key()
+        >>> nonce = AegisStreamEncrypt256.random_nonce()
+        >>> enc = AegisStreamEncrypt256(key, nonce)
+        >>> ciphertext = enc.update(plaintext)
+        >>> tag = enc.final()
+    """
+
+    KEY_SIZE = 32
+    NONCE_SIZE = 32
+
+    _state_type = "aegis256_state"
+    _state_init_func = lib.aegis256_state_init
+    _state_encrypt_update_func = lib.aegis256_state_encrypt_update
+    _state_encrypt_detached_final_func = lib.aegis256_state_encrypt_detached_final
+
+
+class AegisStreamDecrypt256(_AEGISStreamDecryptBase):
+    """
+    AEGIS-256 streaming decryption.
+
+    Uses a 32-byte key and 32-byte nonce.
+
+    Example:
+        >>> dec = AegisStreamDecrypt256(key, nonce)
+        >>> dec.update(ciphertext)
+        >>> plaintext = dec.verify(tag)
+    """
+
+    KEY_SIZE = 32
+    NONCE_SIZE = 32
+
+    _state_type = "aegis256_state"
+    _state_init_func = lib.aegis256_state_init
+    _state_decrypt_update_func = lib.aegis256_state_decrypt_detached_update
+    _state_decrypt_detached_final_func = lib.aegis256_state_decrypt_detached_final
+
+
+# AEGIS-128X2 Streaming Classes
+
+
+class AegisStreamEncrypt128X2(_AEGISStreamEncryptBase):
+    """
+    AEGIS-128X2 streaming encryption - dual-lane variant.
+
+    Uses a 16-byte key and 16-byte nonce.
+    Provides higher throughput on CPUs with SIMD support.
+
+    Example:
+        >>> enc = AegisStreamEncrypt128X2(key, nonce)
+        >>> ciphertext = enc.update(plaintext)
+        >>> tag = enc.final()
+    """
+
+    KEY_SIZE = 16
+    NONCE_SIZE = 16
+
+    _state_type = "aegis128x2_state"
+    _state_init_func = lib.aegis128x2_state_init
+    _state_encrypt_update_func = lib.aegis128x2_state_encrypt_update
+    _state_encrypt_detached_final_func = lib.aegis128x2_state_encrypt_detached_final
+
+
+class AegisStreamDecrypt128X2(_AEGISStreamDecryptBase):
+    """
+    AEGIS-128X2 streaming decryption - dual-lane variant.
+
+    Uses a 16-byte key and 16-byte nonce.
+
+    Example:
+        >>> dec = AegisStreamDecrypt128X2(key, nonce)
+        >>> dec.update(ciphertext)
+        >>> plaintext = dec.verify(tag)
+    """
+
+    KEY_SIZE = 16
+    NONCE_SIZE = 16
+
+    _state_type = "aegis128x2_state"
+    _state_init_func = lib.aegis128x2_state_init
+    _state_decrypt_update_func = lib.aegis128x2_state_decrypt_detached_update
+    _state_decrypt_detached_final_func = lib.aegis128x2_state_decrypt_detached_final
+
+
+# AEGIS-128X4 Streaming Classes
+
+
+class AegisStreamEncrypt128X4(_AEGISStreamEncryptBase):
+    """
+    AEGIS-128X4 streaming encryption - quad-lane variant.
+
+    Uses a 16-byte key and 16-byte nonce.
+    Provides maximum throughput on CPUs with wide SIMD support.
+
+    Example:
+        >>> enc = AegisStreamEncrypt128X4(key, nonce)
+        >>> ciphertext = enc.update(plaintext)
+        >>> tag = enc.final()
+    """
+
+    KEY_SIZE = 16
+    NONCE_SIZE = 16
+
+    _state_type = "aegis128x4_state"
+    _state_init_func = lib.aegis128x4_state_init
+    _state_encrypt_update_func = lib.aegis128x4_state_encrypt_update
+    _state_encrypt_detached_final_func = lib.aegis128x4_state_encrypt_detached_final
+
+
+class AegisStreamDecrypt128X4(_AEGISStreamDecryptBase):
+    """
+    AEGIS-128X4 streaming decryption - quad-lane variant.
+
+    Uses a 16-byte key and 16-byte nonce.
+
+    Example:
+        >>> dec = AegisStreamDecrypt128X4(key, nonce)
+        >>> dec.update(ciphertext)
+        >>> plaintext = dec.verify(tag)
+    """
+
+    KEY_SIZE = 16
+    NONCE_SIZE = 16
+
+    _state_type = "aegis128x4_state"
+    _state_init_func = lib.aegis128x4_state_init
+    _state_decrypt_update_func = lib.aegis128x4_state_decrypt_detached_update
+    _state_decrypt_detached_final_func = lib.aegis128x4_state_decrypt_detached_final
+
+
+# AEGIS-256X2 Streaming Classes
+
+
+class AegisStreamEncrypt256X2(_AEGISStreamEncryptBase):
+    """
+    AEGIS-256X2 streaming encryption - dual-lane 256-bit variant.
+
+    Uses a 32-byte key and 32-byte nonce.
+    Provides high throughput with maximum security.
+
+    Example:
+        >>> enc = AegisStreamEncrypt256X2(key, nonce)
+        >>> ciphertext = enc.update(plaintext)
+        >>> tag = enc.final()
+    """
+
+    KEY_SIZE = 32
+    NONCE_SIZE = 32
+
+    _state_type = "aegis256x2_state"
+    _state_init_func = lib.aegis256x2_state_init
+    _state_encrypt_update_func = lib.aegis256x2_state_encrypt_update
+    _state_encrypt_detached_final_func = lib.aegis256x2_state_encrypt_detached_final
+
+
+class AegisStreamDecrypt256X2(_AEGISStreamDecryptBase):
+    """
+    AEGIS-256X2 streaming decryption - dual-lane 256-bit variant.
+
+    Uses a 32-byte key and 32-byte nonce.
+
+    Example:
+        >>> dec = AegisStreamDecrypt256X2(key, nonce)
+        >>> dec.update(ciphertext)
+        >>> plaintext = dec.verify(tag)
+    """
+
+    KEY_SIZE = 32
+    NONCE_SIZE = 32
+
+    _state_type = "aegis256x2_state"
+    _state_init_func = lib.aegis256x2_state_init
+    _state_decrypt_update_func = lib.aegis256x2_state_decrypt_detached_update
+    _state_decrypt_detached_final_func = lib.aegis256x2_state_decrypt_detached_final
+
+
+# AEGIS-256X4 Streaming Classes
+
+
+class AegisStreamEncrypt256X4(_AEGISStreamEncryptBase):
+    """
+    AEGIS-256X4 streaming encryption - quad-lane 256-bit variant.
+
+    Uses a 32-byte key and 32-byte nonce.
+    Provides maximum throughput and security on AVX-512 CPUs.
+
+    Example:
+        >>> enc = AegisStreamEncrypt256X4(key, nonce)
+        >>> ciphertext = enc.update(plaintext)
+        >>> tag = enc.final()
+    """
+
+    KEY_SIZE = 32
+    NONCE_SIZE = 32
+
+    _state_type = "aegis256x4_state"
+    _state_init_func = lib.aegis256x4_state_init
+    _state_encrypt_update_func = lib.aegis256x4_state_encrypt_update
+    _state_encrypt_detached_final_func = lib.aegis256x4_state_encrypt_detached_final
+
+
+class AegisStreamDecrypt256X4(_AEGISStreamDecryptBase):
+    """
+    AEGIS-256X4 streaming decryption - quad-lane 256-bit variant.
+
+    Uses a 32-byte key and 32-byte nonce.
+
+    Example:
+        >>> dec = AegisStreamDecrypt256X4(key, nonce)
+        >>> dec.update(ciphertext)
+        >>> plaintext = dec.verify(tag)
+    """
+
+    KEY_SIZE = 32
+    NONCE_SIZE = 32
+
+    _state_type = "aegis256x4_state"
+    _state_init_func = lib.aegis256x4_state_init
+    _state_decrypt_update_func = lib.aegis256x4_state_decrypt_detached_update
+    _state_decrypt_detached_final_func = lib.aegis256x4_state_decrypt_detached_final
