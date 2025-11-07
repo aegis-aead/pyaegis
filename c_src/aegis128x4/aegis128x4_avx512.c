@@ -27,8 +27,9 @@
 
 typedef __m512i aes_block_t;
 
-#        define AES_BLOCK_XOR(A, B) _mm512_xor_si512((A), (B))
-#        define AES_BLOCK_AND(A, B) _mm512_and_si512((A), (B))
+#        define AES_BLOCK_XOR(A, B)     _mm512_xor_si512((A), (B))
+#        define AES_BLOCK_XOR3(A, B, C) _mm512_ternarylogic_epi64((A), (B), (C), 0x96)
+#        define AES_BLOCK_AND(A, B)     _mm512_and_si512((A), (B))
 #        define AES_BLOCK_LOAD128_BROADCAST(A) \
             _mm512_broadcast_i32x4(_mm_loadu_si128((const void *) (A)))
 #        define AES_BLOCK_LOAD(A)         _mm512_loadu_si512((const aes_block_t *) (const void *) (A))

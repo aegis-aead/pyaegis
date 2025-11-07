@@ -504,6 +504,7 @@ state_encrypt_update(aegis128x4_state *st_, uint8_t *c, size_t clen_max, size_t 
         return -1;
     }
 
+    // Handle leftover keystream from previous call
     if (st->pos != 0) {
         const size_t available = RATE - st->pos;
         const size_t n         = mlen < available ? mlen : available;
@@ -526,6 +527,7 @@ state_encrypt_update(aegis128x4_state *st_, uint8_t *c, size_t clen_max, size_t 
             return 0;
         }
 
+        // Full block accumulated, update state
         aegis128x4_absorb_rate(st->buf, blocks);
         st->pos = 0;
     }
@@ -540,8 +542,10 @@ state_encrypt_update(aegis128x4_state *st_, uint8_t *c, size_t clen_max, size_t 
         size_t  j;
         uint8_t tmp;
 
+        // Generate keystream without updating state
         aegis128x4_squeeze_keystream(st->buf, blocks);
 
+        // XOR and store plaintext
         for (j = 0; j < left; j++) {
             tmp        = m[i + j];
             c[i + j]   = m[i + j] ^ st->buf[j];
@@ -645,6 +649,7 @@ state_decrypt_detached_update(aegis128x4_state *st_, uint8_t *m, size_t mlen_max
         return -1;
     }
 
+    // Handle leftover keystream from previous call
     if (st->pos != 0) {
         const size_t available = RATE - st->pos;
         const size_t n         = clen < available ? clen : available;
@@ -672,6 +677,7 @@ state_decrypt_detached_update(aegis128x4_state *st_, uint8_t *m, size_t mlen_max
             return 0;
         }
 
+        // Full block accumulated, update state
         aegis128x4_absorb_rate(st->buf, blocks);
         st->pos = 0;
     }
@@ -692,8 +698,10 @@ state_decrypt_detached_update(aegis128x4_state *st_, uint8_t *m, size_t mlen_max
     if (left != 0) {
         size_t j;
 
+        // Generate keystream without updating state
         aegis128x4_squeeze_keystream(st->buf, blocks);
 
+        // XOR and store plaintext
         for (j = 0; j < left; j++) {
             if (m != NULL) {
                 m[i + j]   = c[i + j] ^ st->buf[j];
